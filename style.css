@@ -1,0 +1,306 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	top: 0;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#background {
+	height: 100%;
+	width: 100%;
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+
+#sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 2;
+	top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    overflow-x: hidden;
+    padding-top: 30px;
+}
+
+#sidebar a {
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #adadaf;
+    display: block;
+}
+
+#sidebar a:hover {
+    color: white;
+}
+
+#main {	
+	margin-left: 200px;
+	padding: 0 10px;
+	z-index: 1;
+	color: white;	
+	overflow-y: auto;
+	height: 100%;
+}
+
+#top {
+	text-align: center;	
+}
+
+#intro {
+	text-align: center;
+}
+
+#portrait {
+	width: 150px;
+	border: 2px solid white;
+	border-radius: 100%;
+}
+
+#timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#timeline::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+#contactForm {
+	margin: 30px auto;
+	max-width: 300px;
+}
+
+#contactForm input, #contactForm textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px;
+	margin-top: 6px;
+    margin-bottom: 16px;
+	color: white;
+	background-color: rgba(0,0,0,.5);
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+#contactForm textarea {
+	height: 150px;
+	resize: vertical;
+}
+
+#contactForm input[type=submit] {
+	cursor: pointer;
+}
+
+#contactForm input[type=submit]:hover {
+	background-color: rgba(0,0,0,.8);
+}
+
+#linkedinIcon {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#githubIcon {
+	position: absolute;
+	bottom: 10px;
+	left: 45px;
+}
+
+footer {
+	text-align: center;
+}
+
+.backlight {
+	position: relative;
+	background-color: rgba(0,0,0,.5);
+	padding: 50px 0;
+	margin: 10px 0;
+}
+
+.backToTop {
+	position: absolute;
+	color: white;
+	top: 10px;
+	right: 18px;
+	text-decoration: none;
+}
+
+.backToTop:after {
+	content: '';
+    height: 0;
+    position: relative;
+    top: -12px;
+    width: 0;
+    z-index: 1;
+    right: -6px;
+    border: medium solid white;
+    border-width: 0px 7px 10px 7px;
+    border-color: transparent transparent white transparent;
+}
+
+.sectionHeader {
+	text-align: center;
+}
+
+.timelineBox {
+	margin: 50px 0;
+	padding: 10px 40px;
+	position: relative;	
+	width: 50%;
+}
+
+.timelineBox::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+	background: white;
+    border: 4px solid darkgray;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.content {
+    padding: 20px 30px;
+    position: relative;
+    border: white solid 1px;
+	border-radius: 15px;
+}
+
+.rightBox::after {
+    left: -16px;
+}
+
+.rightBox {
+	left: 50%;
+}
+
+.leftBox {
+	left: 0;
+}
+
+.leftBox::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 2;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.rightBox::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.projects {
+	display: inline-block;
+	text-align: center;
+}
+
+.projects h4 {
+	margin: 10px 0;
+}
+
+.timelineBox .projects:last-child {
+	margin-left: 25px;
+}
+
+.fa {
+	color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+@media all and (max-width: 600px) {
+	#sidebar {
+		position: relative;
+		height: 45px;
+		width: 100%;
+		padding-top: 5px;
+		padding-left: 16%;
+		background-color: black;
+	}
+	
+	#sidebar a {
+		display: inline-block;		
+	}
+	
+	#main {
+		position: relative;
+		margin-left: 0;
+		height: calc(100% - 45px);
+		height: -o-calc(100% - 45px); /* opera */
+		height: -webkit-calc(100% - 45px); /* google, safari */
+		height: -moz-calc(100% - 45px); /* firefox */
+	}
+	
+	#timeline::after {
+		left: 31px;
+	}
+
+	.timelineBox {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 25px;
+	}
+
+	.timelineBox::before {
+		left: 60px;
+		border: medium solid white;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+	}
+
+	.leftBox::after, .rightBox::after {
+		left: 15px;
+	}
+
+	.rightBox {
+		left: 0%;
+	}
+}
+
+@media all and (max-width: 450px) {
+	#sidebar {
+		padding-left: 10%;
+	}
+	
+	#sidebar a {
+		font-size: 20px;
+	}
+}
