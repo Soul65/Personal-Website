@@ -16,44 +16,44 @@ body {
 	width: 100%;
 	background-image: url("background.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 }
 
 #sidebar {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 2;
+	height: 100%;
+	width: 200px;
+	position: fixed;
+	z-index: 2;
 	top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,.5);
-    overflow-x: hidden;
-    padding-top: 30px;
+	left: 0;
+	background-color: rgba(0, 0, 0, .5);
+	overflow-x: hidden;
+	padding-top: 30px;
 }
 
 #sidebar a {
-    padding: 6px 10px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #adadaf;
-    display: block;
+	padding: 6px 10px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #adadaf;
+	display: block;
 }
 
 #sidebar a:hover {
-    color: white;
+	color: white;
 }
 
-#main {	
+#main {
 	margin-left: 200px;
 	padding: 0 10px;
 	z-index: 1;
-	color: white;	
+	color: white;
 	overflow-y: auto;
 	height: 100%;
 }
 
 #top {
-	text-align: center;	
+	text-align: center;
 }
 
 #intro {
@@ -67,19 +67,19 @@ body {
 }
 
 #timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 #timeline::after {
-  content: '';
-  position: absolute;
-  width: 5px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
+	content: '';
+	position: absolute;
+	width: 5px;
+	background-color: white;
+	top: 0;
+	bottom: 0;
+	left: 50%;
 }
 
 #contactForm {
@@ -87,15 +87,16 @@ body {
 	max-width: 300px;
 }
 
-#contactForm input, #contactForm textarea {
+#contactForm input,
+#contactForm textarea {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
 	padding: 12px;
 	margin-top: 6px;
-    margin-bottom: 16px;
+	margin-bottom: 16px;
 	color: white;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0, 0, 0, .5);
 	border: 1px solid white;
 	border-radius: 5px;
 }
@@ -110,7 +111,7 @@ body {
 }
 
 #contactForm input[type=submit]:hover {
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0, 0, 0, .8);
 }
 
 #linkedinIcon {
@@ -131,7 +132,7 @@ footer {
 
 .backlight {
 	position: relative;
-	background-color: rgba(0,0,0,.5);
+	background-color: rgba(0, 0, 0, .5);
 	padding: 50px 0;
 	margin: 10px 0;
 }
@@ -146,15 +147,15 @@ footer {
 
 .backToTop:after {
 	content: '';
-    height: 0;
-    position: relative;
-    top: -12px;
-    width: 0;
-    z-index: 1;
-    right: -6px;
-    border: medium solid white;
-    border-width: 0px 7px 10px 7px;
-    border-color: transparent transparent white transparent;
+	height: 0;
+	position: relative;
+	top: -12px;
+	width: 0;
+	z-index: 1;
+	right: -6px;
+	border: medium solid white;
+	border-width: 0px 7px 10px 7px;
+	border-color: transparent transparent white transparent;
 }
 
 .sectionHeader {
@@ -164,32 +165,33 @@ footer {
 .timelineBox {
 	margin: 50px 0;
 	padding: 10px 40px;
-	position: relative;	
+	position: relative;
 	width: 50%;
 }
 
 .timelineBox::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: -17px;
 	background: white;
-    border: 4px solid darkgray;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
+	border: 4px solid darkgray;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
 }
 
 .content {
-    padding: 20px 30px;
-    position: relative;
-    border: white solid 1px;
+	padding: 20px 30px;
+	position: relative;
+	border: white solid 1px;
 	border-radius: 15px;
+	background-color: #00000082;
 }
 
 .rightBox::after {
-    left: -16px;
+	left: -16px;
 }
 
 .rightBox {
@@ -201,29 +203,29 @@ footer {
 }
 
 .leftBox::before {
-    content: '';
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 2;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
+	content: '';
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 2;
+	right: 30px;
+	border: medium solid white;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent white;
 }
 
 .rightBox::before {
-    content: '';
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+	content: '';
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 1;
+	left: 30px;
+	border: medium solid white;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent white transparent transparent;
 }
 
 .projects {
@@ -246,6 +248,26 @@ footer {
 	border-radius: 5px;
 }
 
+.flexbox {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.contact-content {
+	padding: 20px 50px;
+}
+
+.email-description {
+	margin-bottom: 50px;
+}
+
+.email-link {
+	color: #00d1ff;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
 @media all and (max-width: 600px) {
 	#sidebar {
 		position: relative;
@@ -255,20 +277,23 @@ footer {
 		padding-left: 16%;
 		background-color: black;
 	}
-	
+
 	#sidebar a {
-		display: inline-block;		
+		display: inline-block;
 	}
-	
+
 	#main {
 		position: relative;
 		margin-left: 0;
 		height: calc(100% - 45px);
-		height: -o-calc(100% - 45px); /* opera */
-		height: -webkit-calc(100% - 45px); /* google, safari */
-		height: -moz-calc(100% - 45px); /* firefox */
+		height: -o-calc(100% - 45px);
+		/* opera */
+		height: -webkit-calc(100% - 45px);
+		/* google, safari */
+		height: -moz-calc(100% - 45px);
+		/* firefox */
 	}
-	
+
 	#timeline::after {
 		left: 31px;
 	}
@@ -286,7 +311,8 @@ footer {
 		border-color: transparent white transparent transparent;
 	}
 
-	.leftBox::after, .rightBox::after {
+	.leftBox::after,
+	.rightBox::after {
 		left: 15px;
 	}
 
@@ -299,7 +325,7 @@ footer {
 	#sidebar {
 		padding-left: 10%;
 	}
-	
+
 	#sidebar a {
 		font-size: 20px;
 	}
