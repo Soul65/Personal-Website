@@ -19,4 +19,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Sync website folder to S3 bucket root
       run: |
-        aws s3 sync /website s3://${{ secrets.AWS_S3_BUCKET }} --delete
+        aws s3 sync website/ ${{ secrets.AWS_S3_BUCKET }} --delete
