@@ -4,51 +4,23 @@
 
 html,
 body {
-	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 }
 
-body {
-	display: flex;
-}
-
 #background {
-	position: absolute;
+	display: flex;
 	height: 100%;
 	width: 100%;
-	background-image: url("background.jpg");
+	background-image: url('nature-6812529_1920.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-#sidebar {
-	height: 100%;
-	width: 200px;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, .5);
-	overflow-x: hidden;
-	padding-top: 30px;
-}
-
-#sidebar a {
-	padding: 6px 10px;
-	text-decoration: none;
-	font-size: 25px;
-	color: #adadaf;
-	display: block;
-}
-
-#sidebar a:hover {
-	color: white;
 }
 
 #main {
 	padding: 0 10px;
 	color: white;
-	overflow-y: auto;
 	height: 100%;
 }
 
@@ -96,7 +68,7 @@ body {
 	margin-top: 6px;
 	margin-bottom: 16px;
 	color: white;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	border: 1px solid white;
 	border-radius: 5px;
 }
@@ -106,12 +78,12 @@ body {
 	resize: vertical;
 }
 
-#contactForm input[type=submit] {
+#contactForm input[type='submit'] {
 	cursor: pointer;
 }
 
-#contactForm input[type=submit]:hover {
-	background-color: rgba(0, 0, 0, .8);
+#contactForm input[type='submit']:hover {
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 #linkedinIcon {
@@ -132,7 +104,7 @@ footer {
 
 .backlight {
 	position: relative;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	padding: 50px 0;
 	margin: 10px 0;
 }
@@ -269,19 +241,6 @@ footer {
 }
 
 @media all and (max-width: 600px) {
-	#sidebar {
-		position: relative;
-		height: 45px;
-		width: 100%;
-		padding-top: 5px;
-		padding-left: 16%;
-		background-color: black;
-	}
-
-	#sidebar a {
-		display: inline-block;
-	}
-
 	#main {
 		position: relative;
 		margin-left: 0;
@@ -318,15 +277,5 @@ footer {
 
 	.rightBox {
 		left: 0%;
-	}
-}
-
-@media all and (max-width: 450px) {
-	#sidebar {
-		padding-left: 10%;
-	}
-
-	#sidebar a {
-		font-size: 20px;
 	}
 }
