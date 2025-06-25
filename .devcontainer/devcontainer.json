@@ -1,0 +1,19 @@
+{
+	"name": "My Website DevContainer",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node",
+	"postCreateCommand": ".devcontainer/post-create.sh",
+	"forwardPorts": [3000],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"GitHub.vscode-github-actions",
+				"esbenp.prettier-vscode",
+				"EditorConfig.EditorConfig",
+				"yoavbls.pretty-ts-errors",
+				"xyz.local-history",
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	}
+}
