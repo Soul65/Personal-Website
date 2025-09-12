@@ -1,0 +1,45 @@
+{
+	"compilerOptions": {
+		// Target and Module
+		"target": "ES2020",
+		"module": "ESNext",
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"useDefineForClassFields": true,
+
+		// Module Resolution
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"noEmit": true,
+
+		// JSX
+		"jsx": "react-jsx",
+
+		// Type Checking
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+
+		// Interop Constraints
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		// Path Mapping (optional - for cleaner imports)
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@assets/*": ["src/assets/*"]
+		},
+
+		// Skip type checking of declaration files
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*", "vite.config.js", "styled-system/**/*"],
+	"exclude": ["node_modules", "dist", "styled-system"]
+}

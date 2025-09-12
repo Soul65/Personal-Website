@@ -11,8 +11,7 @@
 				"esbenp.prettier-vscode",
 				"EditorConfig.EditorConfig",
 				"yoavbls.pretty-ts-errors",
-				"xyz.local-history",
-				"bradlc.vscode-tailwindcss"
+				"xyz.local-history"
 			]
 		}
 	}

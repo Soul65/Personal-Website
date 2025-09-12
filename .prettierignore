@@ -1,0 +1,36 @@
+# Add files here to ignore them from prettier formatting
+
+# Global ignores
+.certs
+.github
+
+# Compiled output
+.cache
+.dist
+coverage
+dist
+package-lock.json
+
+# Dependencies
+/node_modules
+/styled-system
+
+# Markdown files
+.md
+
+# Output YML files
+dist/*/*.yml
+
+# IDEs and editors
+.settings/
+.history
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Old site files
+src/old_site
