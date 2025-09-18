@@ -1,4 +1,7 @@
 import { defineConfig } from '@pandacss/dev';
+import { cyan } from './src/theme/colors/cyan';
+import { sage } from './src/theme/colors/sage';
+import { recipes, slotRecipes } from './src/theme/recipes';
 
 export default defineConfig({
 	// Whether to use css reset
@@ -10,9 +13,21 @@ export default defineConfig({
 	// Files to exclude
 	exclude: [],
 
+	// Enable JSX support
+	jsxFramework: 'react',
+
 	// Useful for theme customization
 	theme: {
-		extend: {},
+		extend: {
+			semanticTokens: {
+				colors: {
+					cyan,
+					gray: sage,
+				},
+			},
+			recipes,
+			slotRecipes,
+		},
 	},
 
 	// The output directory for your css system

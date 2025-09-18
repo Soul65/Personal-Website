@@ -1,19 +1,22 @@
-import { HeaderBar } from './components/HeaderBar';
+import { HeaderBar } from '@components/HeaderBar';
+import { AbsoluteCenter, Card } from '@components/ui';
 
 const App = () => {
 	return (
-		<div className="container mx-auto bg-[url('/assets/background.jpg')] bg-no-repeat bg-cover">
+		<AbsoluteCenter>
 			<HeaderBar />
-			<div id='intro' className='backlight'>
-				<h2 className='sectionHeader'>Intro</h2>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>About Me</Card.Title>
+				</Card.Header>
 				<img src='IMG_2923_cropped.jpg' id='portrait' alt='SelfPortrait.jpg' />
-				<p>
+				<Card.Body>
 					I'm a Full-Stack software developer based in Waterloo, Ontario, with a passion
 					for building intuitive, accessible, and performant user interfaces. I have
 					experience working on multiple different products, and I enjoy staying current
 					with modern frameworks, tools, and best practices.
-				</p>
-			</div>
+				</Card.Body>
+			</Card.Root>
 			<div id='history' className='backlight'>
 				<a href='#top' className='backToTop'>
 					Back to top
@@ -130,7 +133,7 @@ const App = () => {
 			<footer className='backlight'>
 				<small>&copy;Copyright 2025, Matt Allen</small>
 			</footer>
-		</div>
+		</AbsoluteCenter>
 	);
 };
 
