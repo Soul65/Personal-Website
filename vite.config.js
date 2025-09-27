@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		// Must be set to true for the server to work inside a Docker container (https://github.com/vitejs/vite/issues/16522)
 		host: true,
-		port: 8080,
+		port: 8081,
 		// Needed for HMR to work
 		watch: {
 			usePolling: true,

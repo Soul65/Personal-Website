@@ -1,4 +1,5 @@
 import { css } from '../../styled-system/css';
+import { ThemeToggle } from './ThemeToggle';
 
 export const HeaderBar = () => {
 	return (
@@ -14,6 +15,7 @@ export const HeaderBar = () => {
 				</h1>
 				<h1 id='vacancy'>Allen</h1>
 			</div>
+			<ThemeToggle />
 		</header>
 	);
 };

@@ -35,6 +35,7 @@
 		"paths": {
 			"@components/*": ["src/components/*"],
 			"@assets/*": ["src/assets/*"],
+			"@parkui/*": ["src/parkui/*"],
 			"styled-system/*": ["styled-system/*"]
 		},
 
