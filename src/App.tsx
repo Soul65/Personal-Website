@@ -1,85 +1,22 @@
 import { HeaderBar } from '@components/HeaderBar';
-import { AbsoluteCenter, Card, Group, Link } from '@parkui/components/ui';
+import { LeftColumn } from '@components/LeftColumn';
+import { RightColumn } from '@components/RightColumn';
+import { AbsoluteCenter, Group } from '@parkui/components/ui';
 import { ThemeProvider } from 'next-themes';
+import { Grid } from 'styled-system/jsx';
 
 const App = () => {
 	return (
-		<ThemeProvider>
+		<ThemeProvider attribute='class'>
 			<AbsoluteCenter>
 				<Group orientation='vertical'>
 					<HeaderBar />
-					<Group>
-						<Card.Root>
-							<Card.Header>
-								<Card.Title>About Me</Card.Title>
-							</Card.Header>
-							<img src='IMG_2923_cropped.jpg' id='portrait' alt='SelfPortrait.jpg' />
-							<Card.Body>
-								I'm a Full-Stack software developer based in Waterloo, Ontario, with
-								a passion for building intuitive, accessible, and performant user
-								interfaces. I have experience working on multiple different
-								products, and I enjoy staying current with modern frameworks, tools,
-								and best practices.
-							</Card.Body>
-						</Card.Root>
-						<Card.Root>
-							<Card.Header>
-								<Card.Title>Links</Card.Title>
-							</Card.Header>
-							<Card.Body>
-								<Link href='/'>Home</Link>
-								<Link href='/old-site'>Old Site</Link>
-							</Card.Body>
-						</Card.Root>
-					</Group>
-					<Card.Root>
-						<Card.Header>
-							<Card.Title>Weather</Card.Title>
-						</Card.Header>
-						<Card.Body padding='0'>
-							<div
-								id='ww_8ed595ee1a6bc'
-								// @ts-ignore
-								v='1.3'
-								loc='id'
-								a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4738"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_whr":3}'
-							>
-								Weather Data Source:{' '}
-								<a
-									href='https://wetterlang.de'
-									id='ww_8ed595ee1a6bc_u'
-									target='_blank'
-								>
-									Wetter 30 tage vorschau
-								</a>
-							</div>
-							<script
-								async
-								src='https://app3.weatherwidget.org/js/?id=ww_8ed595ee1a6bc'
-							></script>
-						</Card.Body>
-					</Card.Root>
-					<Card.Root>
-						<Card.Header>
-							<Card.Title>Work History</Card.Title>
-						</Card.Header>
-						<Card.Body padding='0'>
-							<Group orientation='vertical'>
-								<h3>Independently</h3>
-								<p>
-									At Independently, I worked as a full-stack developer on a SaaS
-									platform that helps organizations manage independent
-									contractors. My main focus was building responsive, intuitive,
-									and user-friendly interfaces using React and Next.js. I
-									collaborated closely with other developers to implement features
-									that improved usability and performance. I also contributed to
-									backend development with NestJS and MongoDB, particularly around
-									structuring and managing entity schemas, creating API endpoints,
-									and managing user role permissions.
-								</p>
-							</Group>
-						</Card.Body>
-					</Card.Root>
+					<Grid columns={12}>
+						<LeftColumn />
+						<RightColumn />
+					</Grid>
+					{/*
+
 					<div id='history' className='backlight'>
 						<a href='#top' className='backToTop'>
 							Back to top
@@ -204,7 +141,7 @@ const App = () => {
 					</div>
 					<footer className='backlight'>
 						<small>&copy;Copyright 2025, Matt Allen</small>
-					</footer>
+					</footer> */}
 				</Group>
 			</AbsoluteCenter>
 		</ThemeProvider>

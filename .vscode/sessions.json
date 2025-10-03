@@ -8,7 +8,6 @@
         "default": [
             {
                 "name": "start",
-                "autoExecuteCommands": true,
                 "color": "terminal.ansiGreen",
                 "commands": [
                     "npm run start"

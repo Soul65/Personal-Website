@@ -5,6 +5,8 @@ import { group } from './group';
 import { icon } from './icon';
 import { link } from './link';
 import { spinner } from './spinner';
+import { splitter } from './splitter';
+import { text } from './text';
 
-export const recipes = { absoluteCenter, group, link, icon, button, spinner };
-export const slotRecipes = { card };
+export const recipes = { absoluteCenter, group, link, icon, button, spinner, text };
+export const slotRecipes = { card, splitter };

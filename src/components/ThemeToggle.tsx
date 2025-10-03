@@ -4,7 +4,6 @@ import { Icon } from '@parkui/components/ui/icon';
 import { IconButton } from '@parkui/components/ui/icon-button';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
 
 export const ThemeToggle = () => {
 	const { theme, setTheme } = useTheme();
@@ -12,13 +11,6 @@ export const ThemeToggle = () => {
 	const handleClick = () => {
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	};
-
-	// Default to system theme on first load
-	useEffect(() => {
-		const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
-
-		setTheme(mediaQuery.matches ? 'light' : 'dark');
-	}, []);
 
 	return (
 		<ClientOnly>
