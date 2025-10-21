@@ -7,5 +7,4 @@ export { IconButton, type IconButtonProps } from './icon-button';
 export { Link, type LinkProps } from './link';
 export { Loader, type LoaderProps } from './loader';
 export { Spinner, type SpinnerProps } from './spinner';
-export * as Splitter from './splitter';
 export { Text, type TextProps } from './text';

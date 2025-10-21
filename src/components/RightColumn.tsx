@@ -10,10 +10,10 @@ export const RightColumn = () => {
 					<Link href='/'>Home</Link>
 					<Link href='/old-site'>Old Site</Link>
 				</SiteCard>
-				<SiteCard title='Weather'>
+				<SiteCard title='Weather in My City' disablePadding>
 					<div
 						id='ww_8ed595ee1a6bc'
-						// @ts-ignore
+						// @ts-expect-error - weather widget attributes
 						v='1.3'
 						loc='id'
 						a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4738"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_whr":3}'
