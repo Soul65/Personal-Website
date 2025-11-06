@@ -1,11 +1,19 @@
-import { absoluteCenter } from './absolute-center';
-import { button } from './button';
-import { card } from './card';
-import { group } from './group';
-import { icon } from './icon';
+import { text } from './text';
 import { link } from './link';
 import { spinner } from './spinner';
-import { text } from './text';
-
-export const recipes = { absoluteCenter, group, link, icon, button, spinner, text };
-export const slotRecipes = { card };
+import { group } from './group';
+import { card } from './card';
+import { button } from './button';
+import { icon } from './icon';
+import { absoluteCenter } from './absolute-center';
+export const recipes = {
+	absoluteCenter,
+	icon,
+	button,
+	card,
+	group,
+	spinner,
+	link,
+	text,
+};
+export const slotRecipes = {};

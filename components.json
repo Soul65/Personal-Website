@@ -1,0 +1,15 @@
+{
+	"$schema": "https://next.park-ui.com/schema/components.json",
+	"framework": "react",
+	"panda": {
+		"config": "panda.config.ts"
+	},
+	"aliases": {
+		"components": "@parkui/components",
+		"hooks": "@parkui/hooks",
+		"lib": "@parkui/lib",
+		"recipes": "@parkui/theme/recipes",
+		"theme": "@parkui/theme",
+		"ui": "@parkui/components/ui"
+	}
+}

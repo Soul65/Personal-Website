@@ -114,14 +114,6 @@ export const LeftColumn = () => {
 						</Box>
 						<Divider />
 						<Box>
-							<Link
-								href='https://www.prnewswire.com/news-releases/imax-acquires-streaming-technology-company-ssimwave-inc-301631500.html'
-								target='_blank'
-								rel='noopener noreferrer'
-								style={linkStyle}
-							>
-								<img src='/src/assets/SSIMWAVE.png' alt='SSIMWave' />
-							</Link>
 							<h3>CrazTechz</h3>
 							<p>
 								In the summer between grade 5 and 6 I went to a summer camp called

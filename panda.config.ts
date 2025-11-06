@@ -1,7 +1,19 @@
 import { defineConfig } from '@pandacss/dev';
-import { black, sage, teal, white } from './src/parkui/theme/colors';
+import { animationStyles } from './src/parkui/theme/animation-styles';
+import { green } from './src/parkui/theme/colors/green';
+import { red } from './src/parkui/theme/colors/red';
+import { sage } from './src/parkui/theme/colors/sage';
+import { teal } from './src/parkui/theme/colors/teal';
+import { conditions } from './src/parkui/theme/conditions';
+import { globalCss } from './src/parkui/theme/global-css';
+import { keyframes } from './src/parkui/theme/keyframes';
+import { layerStyles } from './src/parkui/theme/layer-styles';
 import { recipes, slotRecipes } from './src/parkui/theme/recipes';
-import { shadows } from './src/parkui/theme/shadows';
+import { textStyles } from './src/parkui/theme/text-styles';
+import { colors } from './src/parkui/theme/tokens/colors';
+import { durations } from './src/parkui/theme/tokens/durations';
+import { shadows } from './src/parkui/theme/tokens/shadows';
+import { zIndex } from './src/parkui/theme/tokens/z-index';
 
 export default defineConfig({
 	// Whether to use css reset
@@ -16,46 +28,72 @@ export default defineConfig({
 	// Enable JSX support
 	jsxFramework: 'react',
 
-	conditions: {
-		extend: {
-			light: ':root &, .light &',
-		},
-	},
-
-	globalCss: {
-		extend: {
-			html: {
-				colorPalette: 'teal',
-			},
-		},
-	},
-
 	// Useful for theme customization
 	theme: {
 		extend: {
-			tokens: {
-				colors: {
-					black,
-					white,
-				},
-			},
-			semanticTokens: {
-				colors: {
-					teal,
-					gray: sage,
-				},
-				radii: {
-					l1: { value: '{radii.xs}' },
-					l2: { value: '{radii.sm}' },
-					l3: { value: '{radii.md}' },
-				},
-				shadows,
-			},
+			animationStyles,
 			recipes,
 			slotRecipes,
+			keyframes,
+			layerStyles,
+			textStyles,
+
+			tokens: {
+				colors,
+				durations,
+				zIndex,
+			},
+
+			semanticTokens: {
+				colors: {
+					fg: {
+						default: {
+							value: {
+								_light: '{colors.gray.12}',
+								_dark: '{colors.gray.12}',
+							},
+						},
+
+						muted: {
+							value: {
+								_light: '{colors.gray.11}',
+								_dark: '{colors.gray.11}',
+							},
+						},
+
+						subtle: {
+							value: {
+								_light: '{colors.gray.10}',
+								_dark: '{colors.gray.10}',
+							},
+						},
+					},
+					teal,
+					gray: sage,
+					red,
+					green,
+				},
+
+				shadows,
+
+				radii: {
+					l1: {
+						value: '{radii.xs}',
+					},
+					l2: {
+						value: '{radii.sm}',
+					},
+					l3: {
+						value: '{radii.md}',
+					},
+				},
+			},
 		},
 	},
 
 	// The output directory for your css system
 	outdir: 'styled-system',
+
+	globalCss,
+	conditions,
 });
