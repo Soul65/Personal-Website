@@ -8,6 +8,24 @@ export const RightColumn = () => (
 			<SiteCard title='Links'>
 				<Link href='/'>Home</Link>
 				<Link href='/old-site'>Old Site</Link>
+				<Link
+					href='https://www.linkedin.com/in/matt-allen-b4548b60/'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					LinkedIn
+				</Link>
+				<Link href='https://github.com/Soul65' target='_blank' rel='noopener noreferrer'>
+					GitHub
+				</Link>
+				<Link
+					href='https://profile.indeed.com/p/matta-zbcjfqp'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					Indeed Profile
+				</Link>
+				<Link href='mailto:matt.allen65@hotmail.com'>Email Me</Link>
 			</SiteCard>
 			<SiteCard title='Weather in My City' disablePadding>
 				<div

@@ -10,7 +10,7 @@ export const SiteCard = ({
 	disablePadding?: boolean;
 }) => {
 	return (
-		<Card.Root>
+		<Card.Root width='100%'>
 			<Card.Header>
 				<Card.Title>{title}</Card.Title>
 			</Card.Header>
