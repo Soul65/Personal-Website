@@ -14,6 +14,7 @@ import { colors } from './src/parkui/theme/tokens/colors';
 import { durations } from './src/parkui/theme/tokens/durations';
 import { shadows } from './src/parkui/theme/tokens/shadows';
 import { zIndex } from './src/parkui/theme/tokens/z-index';
+import { tickerRecipe } from './src/components/recipes/tickerRecipe';
 
 export default defineConfig({
 	// Whether to use css reset
@@ -33,8 +34,6 @@ export default defineConfig({
 		extend: {
 			animationStyles,
 			recipes,
-			slotRecipes,
-			keyframes,
 			layerStyles,
 			textStyles,
 
@@ -86,6 +85,19 @@ export default defineConfig({
 					l3: {
 						value: '{radii.md}',
 					},
+				},
+			},
+
+			slotRecipes: {
+				...slotRecipes,
+				marquee: tickerRecipe,
+			},
+
+			keyframes: {
+				...keyframes,
+				marqueeX: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(var(--marquee-translate))' }, // 2rem matches your gap
 				},
 			},
 		},

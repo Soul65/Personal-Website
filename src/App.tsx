@@ -5,17 +5,16 @@ import { Group } from '@parkui/components/ui';
 import { ThemeProvider } from 'next-themes';
 import { Container, Grid } from 'styled-system/jsx';
 
-const App = () => {
-	return (
-		<ThemeProvider attribute='class'>
-			<Container maxW='8xl' px={4} py={8}>
-				<Group orientation='vertical'>
-					<HeaderBar />
-					<Grid columns={12}>
-						<LeftColumn />
-						<RightColumn />
-					</Grid>
-					{/*
+const App = () => (
+	<ThemeProvider attribute='class'>
+		<Container maxW='8xl' px={4} py={8}>
+			<Group orientation='vertical'>
+				<HeaderBar />
+				<Grid columns={12}>
+					<LeftColumn />
+					<RightColumn />
+				</Grid>
+				{/*
 					<div id='contact' className='backlight'>
 						<a href='#top' className='backToTop'>
 							Back to top
@@ -48,10 +47,9 @@ const App = () => {
 					<footer className='backlight'>
 						<small>&copy;Copyright 2025, Matt Allen</small>
 					</footer> */}
-				</Group>
-			</Container>
-		</ThemeProvider>
-	);
-};
+			</Group>
+		</Container>
+	</ThemeProvider>
+);
 
 export default App;
