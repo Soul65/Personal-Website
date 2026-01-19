@@ -6,8 +6,9 @@ export const RightColumn = () => (
 	<GridItem colSpan={{ base: 12, md: 4 }}>
 		<Group orientation='vertical'>
 			<SiteCard title='Links'>
-				<Link href='/'>Home</Link>
-				<Link href='/old-site'>Old Site</Link>
+				<Link href='/src/old_site/index.html' target='_blank' rel='noopener noreferrer'>
+					Old Site
+				</Link>
 				<Link
 					href='https://www.linkedin.com/in/matt-allen-b4548b60/'
 					target='_blank'

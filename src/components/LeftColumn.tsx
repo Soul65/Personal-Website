@@ -1,7 +1,7 @@
 import { Group, Link, Text } from '@parkui/components/ui';
 import { Box, Divider, GridItem, Stack } from 'styled-system/jsx';
 import { SiteCard } from './SiteCard';
-import { Ticker } from './recipes/Ticker';
+import { Ticker } from './ticker/Ticker';
 
 const linkStyle = { width: '150px' };
 

@@ -1,4 +1,5 @@
 import { defineConfig } from '@pandacss/dev';
+import { tickerRecipe } from './src/components/ticker/tickerRecipe';
 import { animationStyles } from './src/parkui/theme/animation-styles';
 import { green } from './src/parkui/theme/colors/green';
 import { red } from './src/parkui/theme/colors/red';
@@ -14,7 +15,6 @@ import { colors } from './src/parkui/theme/tokens/colors';
 import { durations } from './src/parkui/theme/tokens/durations';
 import { shadows } from './src/parkui/theme/tokens/shadows';
 import { zIndex } from './src/parkui/theme/tokens/z-index';
-import { tickerRecipe } from './src/components/recipes/tickerRecipe';
 
 export default defineConfig({
 	// Whether to use css reset

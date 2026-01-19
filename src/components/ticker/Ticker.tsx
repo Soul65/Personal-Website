@@ -32,7 +32,7 @@ export const Ticker = ({ label }: { label: string }) => {
 			<Text textStyle='lg' fontWeight='bold'>
 				{label}:
 			</Text>
-			<Marquee.Root className={classes.root} pauseOnInteraction speed={50}>
+			<Marquee.Root className={classes.root} pauseOnInteraction speed={40}>
 				<Marquee.Viewport className={classes.viewport}>
 					<Marquee.Content className={classes.content}>
 						{items.map((item, i) => (
