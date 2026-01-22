@@ -3,8 +3,8 @@ import { GridItem } from 'styled-system/jsx';
 import { SiteCard } from './SiteCard';
 
 export const RightColumn = () => (
-	<GridItem colSpan={{ base: 12, md: 4 }}>
-		<Group orientation='vertical'>
+	<GridItem colSpan={{ base: 12, md: 3 }}>
+		<Group orientation='vertical' width='100%'>
 			<SiteCard title='Links'>
 				<Link href='/src/old_site/index.html' target='_blank' rel='noopener noreferrer'>
 					Old Site

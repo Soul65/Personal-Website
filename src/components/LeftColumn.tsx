@@ -3,18 +3,28 @@ import { Box, Divider, GridItem, Stack } from 'styled-system/jsx';
 import { SiteCard } from './SiteCard';
 import { Ticker } from './ticker/Ticker';
 
-const linkStyle = { width: '150px' };
+const linkStyle = {
+	width: '150px',
+	height: '70px',
+	padding: '8px',
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	backgroundColor: 'rgba(0, 0, 0, 0.4)',
+	border: '1px solid rgba(0, 0, 0, 0.1)',
+	borderRadius: '8px',
+};
 
 export const LeftColumn = () => (
-	<GridItem colSpan={{ base: 12, md: 8 }}>
+	<GridItem colSpan={{ base: 12, md: 9 }}>
 		<Group orientation='vertical' width='100%'>
 			<SiteCard title='About Me'>
-				<Group>
+				<Group grow flexWrap='wrap'>
 					<img
 						src='/src/assets/IMG_2923_cropped.jpg'
 						id='portrait'
 						alt='Self Portrait'
-						style={{ width: '200px', height: 'auto' }}
+						style={{ maxWidth: '200px', height: 'auto' }}
 					/>
 					<Text>
 						I'm a Full-Stack software developer based in Waterloo, Ontario, with a
@@ -91,7 +101,14 @@ export const LeftColumn = () => (
 			<SiteCard title='History'>
 				<Stack gap='4'>
 					<Box>
-						<h3>College</h3>
+						<Link
+							href='https://www.conestogac.on.ca'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={linkStyle}
+						>
+							<img src='/src/assets/conestoga.svg' alt='Conestoga College' />
+						</Link>
 						<p>
 							I am a graduate of the Computer Programmer / Analyst course at Conestoga
 							College. While there I learned a multitude of languages including C#,
@@ -101,19 +118,37 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<h3>Highschool</h3>
+						<Link
+							href='https://resurrection.wcdsb.ca'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={linkStyle}
+						>
+							<img
+								src='/src/assets/Resurrection.png'
+								alt='Resurrection'
+								style={{ height: '50px' }}
+							/>
+						</Link>
 						<p>
-							I took computer programming in both grades 11 and 12. This is where I
-							finally started to learn the basics of coding. We started by learning
-							Turing and then Java the year after. I also went to the Skills Ontario
-							Competition for both 2D and 3D animation. They were both really
-							interesting to be in, but also made me realize I wasn't cut out for that
-							sort of thing.
+							At Resurrection Catholic Secondary School, I took computer programming
+							in both grades 11 and 12. This is where I finally started to learn the
+							basics of coding. We started by learning Turing and then Java the year
+							after. I also went to the Skills Ontario Competition for both 2D and 3D
+							animation. They were both really interesting to be in, but also made me
+							realize I wasn't cut out for that sort of thing.
 						</p>
 					</Box>
 					<Divider />
 					<Box>
-						<h3>CrazTechz</h3>
+						<Link
+							href='https://www.facebook.com/craztechz'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={linkStyle}
+						>
+							<img src='/src/assets/CrazTechz.png' alt='CrazTechz' />
+						</Link>
 						<p>
 							In the summer between grade 5 and 6 I went to a summer camp called
 							CrazTechz. This was my first real experience with programming. While
