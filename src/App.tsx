@@ -6,15 +6,14 @@ import { ThemeProvider } from 'next-themes';
 import Snowfall from 'react-snowfall';
 import { Container, Grid } from 'styled-system/jsx';
 
+// Default to snow for December to February
 let images: CanvasImageSource[] = [];
 let radius: [number, number] = [0.5, 3.0];
 let speed: [number, number] = [0.5, 3.0];
 let wind: [number, number] = [-0.5, 2.0];
-let color: string | undefined = '#FFFFFF';
-let enable3DRotation = false;
+let color = '#FFFFFF';
 
-// const currentMonth = new Date().getMonth();
-const currentMonth = 9;
+const currentMonth = new Date().getMonth();
 
 // If March to May, show rain
 if (currentMonth >= 2 && currentMonth <= 4) {
@@ -24,7 +23,18 @@ if (currentMonth >= 2 && currentMonth <= 4) {
 	color = '#3f51b5';
 }
 
-// If Spetember to November, show leaves
+// If June to August, show stars
+if (currentMonth >= 5 && currentMonth <= 7) {
+	const star = document.createElement('img');
+	star.src = 'src/assets/white-star.png';
+
+	images = [star];
+	radius = [10, 15];
+	speed = [0, 0];
+	wind = [-0.5, 0.5];
+}
+
+// If September to November, show leaves
 if (currentMonth >= 8 && currentMonth <= 10) {
 	const leaf1 = document.createElement('img');
 	leaf1.src = 'src/assets/maple-leaf.png';
@@ -36,7 +46,6 @@ if (currentMonth >= 8 && currentMonth <= 10) {
 	images = [leaf1, leaf2, leaf3];
 	radius = [20, 20];
 	speed = [0.5, 2];
-	enable3DRotation = true;
 }
 
 const App = () => (
@@ -48,7 +57,6 @@ const App = () => (
 			speed={speed}
 			wind={wind}
 			color={color}
-			enable3DRotation={enable3DRotation}
 			style={{
 				position: 'fixed',
 			}}
@@ -62,8 +70,33 @@ const App = () => (
 				</Grid>
 				<footer>
 					<Group orientation='vertical' align='center' marginTop='8' gap='2'>
-						<Text>&copy; {new Date().getFullYear()} Matt Allen.</Text>
-						<Link href='mailto:matt.allen65@hotmail.com'>matt.allen65@hotmail.com</Link>
+						<Text>
+							Created using{' '}
+							<Link
+								href='https://park-ui.com/'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								ParkUI
+							</Link>{' '}
+							and inspired by{' '}
+							<Link
+								href='https://dimden.dev/'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<img
+									src='https://dimden.dev/services/images/88x31.gif'
+									alt='Dimden'
+								/>
+							</Link>
+						</Text>
+						<Group gap='2' flexWrap='wrap' justifyContent='center'>
+							<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
+							<Link href='mailto:matt.allen65@hotmail.com'>
+								matt.allen65@hotmail.com
+							</Link>
+						</Group>
 					</Group>
 				</footer>
 			</Group>

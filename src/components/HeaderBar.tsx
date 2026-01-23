@@ -58,14 +58,14 @@ export const HeaderBar = () => {
 					fontFamily='Monoton'
 					fontSize='7xl'
 					textAlign='center'
-					style={{
-						color: '#ffffff',
-						textShadow: isFirstNameGlowing
+					color='#ffffff'
+					textShadow={
+						isFirstNameGlowing
 							? '0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff'
-							: '',
-						transition: 'opacity 0.1s ease-in-out',
-						opacity: isFirstNameGlowing ? 1 : 0.3,
-					}}
+							: ''
+					}
+					transition='opacity 0.1s ease-in-out'
+					opacity={isFirstNameGlowing ? 1 : 0.3}
 				>
 					Matt
 				</Text>
@@ -73,14 +73,12 @@ export const HeaderBar = () => {
 					fontFamily='Monoton'
 					fontSize='7xl'
 					textAlign='center'
-					style={{
-						color: 'Red',
-						textShadow: isLastNameGlowing
-							? '0 0 80px Red,0 0 30px FireBrick,0 0 6px DarkRed'
-							: '',
-						transition: 'opacity 0.1s ease-in-out',
-						opacity: isLastNameGlowing ? 1 : 0.3,
-					}}
+					color='Red'
+					textShadow={
+						isLastNameGlowing ? '0 0 80px Red,0 0 30px FireBrick,0 0 6px DarkRed' : ''
+					}
+					transition='opacity 0.1s ease-in-out'
+					opacity={isLastNameGlowing ? 1 : 0.3}
 				>
 					Allen
 				</Text>
