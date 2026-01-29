@@ -11,7 +11,8 @@
 				"esbenp.prettier-vscode",
 				"EditorConfig.EditorConfig",
 				"yoavbls.pretty-ts-errors",
-				"xyz.local-history"
+				"xyz.local-history",
+				"nguyenngoclong.terminal-keeper"
 			]
 		}
 	}
