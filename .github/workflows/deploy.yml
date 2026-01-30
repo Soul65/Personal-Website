@@ -18,21 +18,19 @@ jobs:
           - name: Configure AWS Credentials
             uses: aws-actions/configure-aws-credentials@v5.1.1
             with:
-              aws-region: us-east-1
-              role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
+                aws-region: us-east-1
+                role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
 
           - name: Get S3 Bucket Name from Secrets Manager
             uses: aws-actions/aws-secretsmanager-get-secrets@v2
             with:
                 secret-ids: AWS_S3_BUCKET, Portfolio_Deploy_Secrets
+                parse-json-secrets: true
 
           - name: Install dependencies and build
             run: |
-              npm install
-              npm run build
-
-          - name: Debug env
-            run: printenv
+                npm install
+                npm run build
 
           - name: Sync to S3
             run: aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete
