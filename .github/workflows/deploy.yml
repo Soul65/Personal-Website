@@ -26,5 +26,10 @@ jobs:
             with:
                 secret-ids: AWS_S3_BUCKET, Portfolio_Deploy_Secrets
 
+          - name: Install dependencies and build
+            run: |
+              npm install
+              npm run build
+
           - name: Sync to S3
             run: aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete
