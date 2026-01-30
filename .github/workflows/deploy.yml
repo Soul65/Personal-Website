@@ -31,5 +31,8 @@ jobs:
               npm install
               npm run build
 
+          - name: Debug env
+            run: printenv
+
           - name: Sync to S3
             run: aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete
