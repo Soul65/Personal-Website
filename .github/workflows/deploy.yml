@@ -24,7 +24,8 @@ jobs:
           - name: Get S3 Bucket Name from Secrets Manager
             uses: aws-actions/aws-secretsmanager-get-secrets@v2
             with:
-                secret-ids: AWS_S3_BUCKET, Portfolio_Deploy_Secrets
+                secret-ids: |
+                    , Portfolio_Deploy_Secrets
                 parse-json-secrets: true
 
           - name: Install dependencies and build
