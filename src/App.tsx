@@ -26,7 +26,7 @@ if (currentMonth >= 2 && currentMonth <= 4) {
 // If June to August, show stars
 if (currentMonth >= 5 && currentMonth <= 7) {
 	const star = document.createElement('img');
-	star.src = 'src/assets/white-star.png';
+	star.src = 'assets/white-star.png';
 
 	images = [star];
 	radius = [10, 15];
@@ -37,11 +37,11 @@ if (currentMonth >= 5 && currentMonth <= 7) {
 // If September to November, show leaves
 if (currentMonth >= 8 && currentMonth <= 10) {
 	const leaf1 = document.createElement('img');
-	leaf1.src = 'src/assets/maple-leaf.png';
+	leaf1.src = 'assets/maple-leaf.png';
 	const leaf2 = document.createElement('img');
-	leaf2.src = 'src/assets/oak-leaf.png';
+	leaf2.src = 'assets/oak-leaf.png';
 	const leaf3 = document.createElement('img');
-	leaf3.src = 'src/assets/brown-leaf.png';
+	leaf3.src = 'assets/brown-leaf.png';
 
 	images = [leaf1, leaf2, leaf3];
 	radius = [20, 20];

@@ -21,7 +21,7 @@ export const LeftColumn = () => (
 			<SiteCard title='About Me'>
 				<Group grow flexWrap='wrap'>
 					<img
-						src='/src/assets/IMG_2923_cropped.jpg'
+						src='assets/IMG_2923_cropped.jpg'
 						id='portrait'
 						alt='Self Portrait'
 						style={{ maxWidth: '200px', height: 'auto' }}
@@ -44,7 +44,7 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='/src/assets/Independently.png' alt='Independently' />
+							<img src='assets/Independently.png' alt='Independently' />
 						</Link>
 						<p>
 							At Independently, I worked as a full-stack developer on a SaaS platform
@@ -65,7 +65,7 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='/src/assets/Alaunus.png' alt='Alaunus' />
+							<img src='assets/Alaunus.png' alt='Alaunus' />
 						</Link>
 						<p>
 							At Alaunus, I worked as a front-end developer on a healthcare SaaS
@@ -84,7 +84,7 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='/src/assets/SSIMWAVE.png' alt='SSIMWave' />
+							<img src='assets/SSIMWAVE.png' alt='SSIMWave' />
 						</Link>
 						<p>
 							My first job I worked at was a company called SSIMWave. Their products
@@ -107,7 +107,7 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='/src/assets/conestoga.svg' alt='Conestoga College' />
+							<img src='assets/conestoga.svg' alt='Conestoga College' />
 						</Link>
 						<p>
 							I am a graduate of the Computer Programmer / Analyst course at Conestoga
@@ -125,7 +125,7 @@ export const LeftColumn = () => (
 							style={linkStyle}
 						>
 							<img
-								src='/src/assets/Resurrection.png'
+								src='assets/Resurrection.png'
 								alt='Resurrection'
 								style={{ height: '50px' }}
 							/>
@@ -147,7 +147,7 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='/src/assets/CrazTechz.png' alt='CrazTechz' />
+							<img src='assets/CrazTechz.png' alt='CrazTechz' />
 						</Link>
 						<p>
 							In the summer between grade 5 and 6 I went to a summer camp called
