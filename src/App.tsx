@@ -5,6 +5,7 @@ import { Group, Link, Text } from '@parkui/components/ui';
 import { ThemeProvider } from 'next-themes';
 import Snowfall from 'react-snowfall';
 import { Container, Grid } from 'styled-system/jsx';
+import { useAnimationStore } from './store';
 
 // Default to snow for December to February
 let images: CanvasImageSource[] = [];
@@ -48,60 +49,66 @@ if (currentMonth >= 8 && currentMonth <= 10) {
 	speed = [0.5, 2];
 }
 
-const App = () => (
-	<ThemeProvider attribute='class'>
-		<Snowfall
-			snowflakeCount={150}
-			images={images}
-			radius={radius}
-			speed={speed}
-			wind={wind}
-			color={color}
-			style={{
-				position: 'fixed',
-			}}
-		/>
-		<Container maxW='7xl' px={4} py={8}>
-			<Group orientation='vertical'>
-				<HeaderBar />
-				<Grid columns={12}>
-					<LeftColumn />
-					<RightColumn />
-				</Grid>
-				<footer>
-					<Group orientation='vertical' align='center' marginTop='8' gap='2'>
-						<Text>
-							Created using{' '}
-							<Link
-								href='https://park-ui.com/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								ParkUI
-							</Link>{' '}
-							and inspired by{' '}
-							<Link
-								href='https://dimden.dev/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								<img
-									src='https://dimden.dev/services/images/88x31.gif'
-									alt='Dimden'
-								/>
-							</Link>
-						</Text>
-						<Group gap='2' flexWrap='wrap' justifyContent='center'>
-							<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
-							<Link href='mailto:matt.allen65@hotmail.com'>
-								matt.allen65@hotmail.com
-							</Link>
+const App = () => {
+	const isSnowfallEnabled = useAnimationStore((state) => state.isSnowfallEnabled);
+
+	return (
+		<ThemeProvider attribute='class'>
+			{isSnowfallEnabled && (
+				<Snowfall
+					snowflakeCount={150}
+					images={images}
+					radius={radius}
+					speed={speed}
+					wind={wind}
+					color={color}
+					style={{
+						position: 'fixed',
+					}}
+				/>
+			)}
+			<Container maxW='7xl' px={4} py={8}>
+				<Group orientation='vertical'>
+					<HeaderBar />
+					<Grid columns={12}>
+						<LeftColumn />
+						<RightColumn />
+					</Grid>
+					<footer>
+						<Group orientation='vertical' align='center' marginTop='8' gap='2'>
+							<Text>
+								Created using{' '}
+								<Link
+									href='https://park-ui.com/'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									ParkUI
+								</Link>{' '}
+								and inspired by{' '}
+								<Link
+									href='https://dimden.dev/'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<img
+										src='https://dimden.dev/services/images/88x31.gif'
+										alt='Dimden'
+									/>
+								</Link>
+							</Text>
+							<Group gap='2' flexWrap='wrap' justifyContent='center'>
+								<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
+								<Link href='mailto:matt.allen65@hotmail.com'>
+									matt.allen65@hotmail.com
+								</Link>
+							</Group>
 						</Group>
-					</Group>
-				</footer>
-			</Group>
-		</Container>
-	</ThemeProvider>
-);
+					</footer>
+				</Group>
+			</Container>
+		</ThemeProvider>
+	);
+};
 
 export default App;

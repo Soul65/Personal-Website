@@ -6,13 +6,9 @@ import { Ticker } from './ticker/Ticker';
 const linkStyle = {
 	width: '150px',
 	height: '70px',
-	padding: '8px',
 	display: 'flex',
-	justifyContent: 'center',
+	justifyContent: 'left',
 	alignItems: 'center',
-	backgroundColor: 'rgba(0, 0, 0, 0.4)',
-	border: '1px solid rgba(0, 0, 0, 0.1)',
-	borderRadius: '8px',
 };
 
 export const LeftColumn = () => (
@@ -44,7 +40,10 @@ export const LeftColumn = () => (
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
-							<img src='assets/Independently.png' alt='Independently' />
+							<img
+								src='assets/independently_logomark_white.png'
+								alt='Independently'
+							/>
 						</Link>
 						<p>
 							At Independently, I worked as a full-stack developer on a SaaS platform
@@ -98,7 +97,7 @@ export const LeftColumn = () => (
 					</Box>
 				</Stack>
 			</SiteCard>
-			<SiteCard title='History'>
+			<SiteCard title='Education'>
 				<Stack gap='4'>
 					<Box>
 						<Link

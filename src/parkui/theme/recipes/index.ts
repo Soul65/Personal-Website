@@ -1,3 +1,4 @@
+import { checkbox } from './checkbox';
 import { text } from './text';
 import { link } from './link';
 import { spinner } from './spinner';
@@ -15,5 +16,6 @@ export const recipes = {
 	spinner,
 	link,
 	text,
+	checkbox,
 };
 export const slotRecipes = {};

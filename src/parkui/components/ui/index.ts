@@ -1,6 +1,7 @@
 export { AbsoluteCenter, type AbsoluteCenterProps } from './absolute-center';
 export { Button, ButtonGroup, type ButtonGroupProps, type ButtonProps } from './button';
 export * as Card from './card';
+export * as Checkbox from './checkbox';
 export { Group, type GroupProps } from './group';
 export { Icon, type IconProps } from './icon';
 export { IconButton, type IconButtonProps } from './icon-button';

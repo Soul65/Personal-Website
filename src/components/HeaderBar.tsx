@@ -1,55 +1,64 @@
 import { Group, Text } from '@parkui/components/ui';
-// import { ThemeToggle } from './ThemeToggle';
 import { useEffect, useState } from 'react';
+import { useAnimationStore } from 'src/store';
+// import { ThemeToggle } from './ThemeToggle';
 
 export const HeaderBar = () => {
 	const [isFirstNameGlowing, setIsFirstNameGlowing] = useState(true);
 	const [isLastNameGlowing, setIsLastNameGlowing] = useState(false);
 
+	const isNameAnimated = useAnimationStore((state) => state.isNameAnimated);
+
 	useEffect(() => {
-		let timeoutId: number;
-		let currentPhase = 0;
-		let stepInPhase = 0;
+		if (!isNameAnimated) {
+			setIsFirstNameGlowing(true);
+			setIsLastNameGlowing(true);
+			return;
+		} else {
+			let timeoutId: number;
+			let currentPhase = 0;
+			let stepInPhase = 0;
 
-		const phases = [
-			{ duration: 1000, steps: 4 }, // Alternating names
-			{ duration: 300, steps: 6 }, // Flashing both
-			{ duration: 8000, steps: 1 }, // Both glowing
-		];
+			const phases = [
+				{ duration: 1000, steps: 4 }, // Alternating names
+				{ duration: 300, steps: 6 }, // Flashing both
+				{ duration: 8000, steps: 1 }, // Both glowing
+			];
 
-		const runAnimation = () => {
-			const phase = phases[currentPhase] ?? { duration: 1000, steps: 1 };
+			const runAnimation = () => {
+				const phase = phases[currentPhase] ?? { duration: 1000, steps: 1 };
 
-			if (currentPhase === 0) {
-				// Alternating names
-				setIsFirstNameGlowing(stepInPhase % 2 === 0);
-				setIsLastNameGlowing(stepInPhase % 2 === 1);
-			} else if (currentPhase === 1) {
-				// Flashing both
-				const bothOn = stepInPhase % 2 === 0;
+				if (currentPhase === 0) {
+					// Alternating names
+					setIsFirstNameGlowing(stepInPhase % 2 === 0);
+					setIsLastNameGlowing(stepInPhase % 2 === 1);
+				} else if (currentPhase === 1) {
+					// Flashing both
+					const bothOn = stepInPhase % 2 === 0;
 
-				setIsFirstNameGlowing(bothOn);
-				setIsLastNameGlowing(bothOn);
-			} else {
-				// Both glowing
-				setIsFirstNameGlowing(true);
-				setIsLastNameGlowing(true);
-			}
+					setIsFirstNameGlowing(bothOn);
+					setIsLastNameGlowing(bothOn);
+				} else {
+					// Both glowing
+					setIsFirstNameGlowing(true);
+					setIsLastNameGlowing(true);
+				}
 
-			stepInPhase++;
+				stepInPhase++;
 
-			if (stepInPhase >= phase.steps) {
-				stepInPhase = 0;
-				currentPhase = (currentPhase + 1) % phases.length;
-			}
+				if (stepInPhase >= phase.steps) {
+					stepInPhase = 0;
+					currentPhase = (currentPhase + 1) % phases.length;
+				}
 
-			timeoutId = setTimeout(runAnimation, phase.duration);
-		};
+				timeoutId = setTimeout(runAnimation, phase.duration);
+			};
 
-		runAnimation();
+			runAnimation();
 
-		return () => clearTimeout(timeoutId);
-	}, []);
+			return () => clearTimeout(timeoutId);
+		}
+	}, [isNameAnimated]);
 
 	return (
 		<header id='top'>
