@@ -15,6 +15,12 @@ jobs:
           - name: Checkout Code
             uses: actions/checkout@v6
 
+          - name: Run linters
+            run: |
+              npm install
+              npm run lint
+              npm run lint:types
+
           - name: Configure AWS Credentials
             uses: aws-actions/configure-aws-credentials@v5.1.1
             with:
@@ -28,9 +34,8 @@ jobs:
                     , Portfolio_Deploy_Secrets
                 parse-json-secrets: true
 
-          - name: Install dependencies and build
+          - name: Build Project
             run: |
-                npm install
                 npm run build
 
           - name: Sync to S3
