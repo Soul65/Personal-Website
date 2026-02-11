@@ -29,7 +29,7 @@
 		"parkui:add": "npx @park-ui/cli add"
 	},
 	"devDependencies": {
-		"@eslint/js": "^10.0.1",
+		"@eslint/js": "^9.39.2",
 		"@pandacss/dev": "^1.8.1",
 		"@park-ui/cli": "=1.0.1",
 		"@types/react": "^19.2.13",
