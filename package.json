@@ -30,14 +30,14 @@
 		"parkui:add": "npx @park-ui/cli add"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.3",
+		"@eslint/js": "^10.0.1",
 		"@pandacss/dev": "^1.8.2",
 		"@park-ui/cli": "=1.0.1",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^5.1.4",
 		"autoprefixer": "^10.4.27",
-		"eslint": "^9.39.3",
+		"eslint": "^10.0.2",
 		"eslint-plugin-react-hooks": "^7.0.1",
 		"eslint-plugin-react-refresh": "^0.5.2",
 		"husky": "^9.1.7",
