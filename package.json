@@ -20,12 +20,12 @@
 		"prepare": "panda codegen",
 		"build": "vite build",
 		"lint": "eslint .",
-		"lint:types": "npx tsc",
+		"lint:types": "npx tsc --noEmit",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
 		"ncu": "ncu",
-		"ncu:update": "ncu -u && npm install",
-		"ncu:update:minor": "ncu -u -t minor && npm install",
+		"ncu:update": "ncu -u && pnpm install",
+		"ncu:update:minor": "ncu -u -t minor && pnpm install",
 		"parkui:init": "npx @park-ui/cli init",
 		"parkui:add": "npx @park-ui/cli add"
 	},
@@ -60,6 +60,7 @@
 	"lint-staged": {
 		"*.{js,css,html}": "npm run format",
 		"*.{js,ts,tsx}": "npm run lint",
-		"*.{ts,tsx}": "npm run lint:types"
-	}
+		"*.{ts,tsx}": "bash -c 'npm run lint:types'"
+	},
+	"packageManager": "pnpm@10.33.0"
 }

@@ -31,12 +31,11 @@
 		"forceConsistentCasingInFileNames": true,
 
 		// Path Mapping (optional - for cleaner imports)
-		"baseUrl": ".",
 		"paths": {
-			"@components/*": ["src/components/*"],
-			"@assets/*": ["src/assets/*"],
-			"@parkui/*": ["src/parkui/*"],
-			"styled-system/*": ["styled-system/*"]
+			"@components/*": ["./src/components/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@parkui/*": ["./src/parkui/*"],
+			"styled-system/*": ["./styled-system/*"]
 		},
 
 		// Skip type checking of declaration files

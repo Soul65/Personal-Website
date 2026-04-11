@@ -3,15 +3,16 @@ set -ex
 
 echo "[INFO] Running post-create..."
 
-# Install NodeJS npm global dependencies
-npm install --global npm-check-updates prettier
+# Install pnpm dependencies
+echo "[INFO] Installing pnpm global dependencies..."
+pnpm add -g npm-check-updates turbo prettier
 
-if [ -f "package-lock.json" ]; then
-    echo "[INFO] Install NodeJS npm 'package.json' dependencies..."
-    npm install || EXIT_CODE=$?
+echo "[INFO] Installing pnpm dependencies..."
+pnpm install --config.confirmModulesPurge=false
 
-    echo "[DEBUG] post.npm-install EXIT_CODE: $EXIT_CODE"
-    EXIT_CODE=0
-fi
+# Set up pnpm tab completion
+echo "[INFO] Setting up pnpm tab completion..."
+pnpm completion bash > ~/completion-for-pnpm.bash
+echo 'source ~/completion-for-pnpm.bash' >> ~/.bashrc
 
-echo "[INFO] post-create complete."
+echo "[INFO] Post-create script completed."

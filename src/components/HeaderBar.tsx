@@ -1,6 +1,6 @@
 import { Group, Text } from '@parkui/components/ui';
 import { useEffect, useState } from 'react';
-import { useAnimationStore } from 'src/store';
+import { useAnimationStore } from '../store';
 // import { ThemeToggle } from './ThemeToggle';
 
 export const HeaderBar = () => {

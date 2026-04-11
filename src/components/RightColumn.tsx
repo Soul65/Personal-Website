@@ -1,8 +1,8 @@
 import { Checkbox, Group, Link } from '@parkui/components/ui';
-import { useAnimationStore } from 'src/store';
 import { Box, GridItem } from 'styled-system/jsx';
-import { SiteCard } from './SiteCard';
 import { useShallow } from 'zustand/shallow';
+import { useAnimationStore } from '../store';
+import { SiteCard } from './SiteCard';
 
 export const RightColumn = () => {
 	const [isSnowfallEnabled, setIsSnowfallEnabled, isNameAnimated, setIsNameAnimated] =
