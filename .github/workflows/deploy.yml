@@ -11,15 +11,27 @@ jobs:
         permissions:
             id-token: write
             contents: read
+        strategy:
+            matrix:
+                node-version: [24]
         steps:
           - name: Checkout Code
             uses: actions/checkout@v6
 
+          - name: Install pnpm
+            uses: pnpm/action-setup@v5
+
+          - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v6
+            with:
+                node-version: ${{ matrix.node-version }}
+                cache: "pnpm"
+
           - name: Run linters
             run: |
-              pnpm install --frozen-lockfile
-              pnpm run lint
-              pnpm run lint:types
+                pnpm install --frozen-lockfile
+                pnpm run lint
+                pnpm run lint:types
 
           - name: Configure AWS Credentials
             uses: aws-actions/configure-aws-credentials@v6.0.0
