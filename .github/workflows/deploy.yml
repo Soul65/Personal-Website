@@ -17,9 +17,9 @@ jobs:
 
           - name: Run linters
             run: |
-              npm install
-              npm run lint
-              npm run lint:types
+              pnpm install --frozen-lockfile
+              pnpm run lint
+              pnpm run lint:types
 
           - name: Configure AWS Credentials
             uses: aws-actions/configure-aws-credentials@v6.0.0
@@ -36,7 +36,7 @@ jobs:
 
           - name: Build Project
             run: |
-                npm run build
+                pnpm run build
 
           - name: Sync to S3
             run: aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete
