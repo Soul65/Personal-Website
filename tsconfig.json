@@ -33,14 +33,12 @@
 		// Path Mapping (optional - for cleaner imports)
 		"paths": {
 			"@components/*": ["./src/components/*"],
-			"@assets/*": ["./src/assets/*"],
-			"@parkui/*": ["./src/parkui/*"],
-			"styled-system/*": ["./styled-system/*"]
+			"@assets/*": ["./src/assets/*"]
 		},
 
 		// Skip type checking of declaration files
 		"skipLibCheck": true
 	},
-	"include": ["src/**/*", "vite.config.js", "styled-system/**/*"],
-	"exclude": ["node_modules", "dist", "styled-system"]
+	"include": ["src/**/*", "vite.config.js"],
+	"exclude": ["node_modules", "dist"]
 }

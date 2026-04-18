@@ -5,7 +5,7 @@ import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-	{ ignores: ['dist', 'styled-system', 'src/parkui', '.history'] },
+	{ ignores: ['dist', '.history'] },
 	{
 		files: ['**/*.cjs'],
 		languageOptions: {

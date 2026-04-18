@@ -13,7 +13,6 @@ package-lock.json
 
 # Dependencies
 /node_modules
-/styled-system
 
 # Markdown files
 .md
