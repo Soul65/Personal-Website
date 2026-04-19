@@ -1,5 +1,4 @@
-import { Group, Link, Text } from '@parkui/components/ui';
-import { Box, Divider, GridItem, Stack } from 'styled-system/jsx';
+import { Group, Link, Text, Box, Divider, GridItem, Stack } from '@mantine/core';
 import { SiteCard } from './SiteCard';
 import { Ticker } from './ticker/Ticker';
 

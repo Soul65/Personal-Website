@@ -1,10 +1,9 @@
 import { HeaderBar } from '@components/HeaderBar';
 import { LeftColumn } from '@components/LeftColumn';
 import { RightColumn } from '@components/RightColumn';
-import { Group, Link, Text } from '@parkui/components/ui';
-import { ThemeProvider } from 'next-themes';
+import { Container, Grid, Group, MantineProvider, NavLink, Text } from '@mantine/core';
+import '@mantine/core/styles.css';
 import Snowfall from 'react-snowfall';
-import { Container, Grid } from 'styled-system/jsx';
 import { useAnimationStore } from './store';
 
 // Default to snow for December to February
@@ -53,7 +52,7 @@ const App = () => {
 	const isSnowfallEnabled = useAnimationStore((state) => state.isSnowfallEnabled);
 
 	return (
-		<ThemeProvider attribute='class'>
+		<MantineProvider>
 			{isSnowfallEnabled && (
 				<Snowfall
 					snowflakeCount={150}
@@ -67,47 +66,34 @@ const App = () => {
 					}}
 				/>
 			)}
-			<Container maxW='7xl' px={4} py={8}>
-				<Group orientation='vertical'>
-					<HeaderBar />
-					<Grid columns={12}>
-						<LeftColumn />
-						<RightColumn />
-					</Grid>
-					<footer>
-						<Group orientation='vertical' align='center' marginTop='8' gap='2'>
-							<Text>
-								Created using{' '}
-								<Link
-									href='https://park-ui.com/'
-									target='_blank'
-									rel='noopener noreferrer'
-								>
-									ParkUI
-								</Link>{' '}
-								and inspired by{' '}
-								<Link
-									href='https://dimden.dev/'
-									target='_blank'
-									rel='noopener noreferrer'
-								>
-									<img
-										src='https://dimden.dev/services/images/88x31.gif'
-										alt='Dimden'
-									/>
-								</Link>
-							</Text>
-							<Group gap='2' flexWrap='wrap' justifyContent='center'>
-								<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
-								<Link href='mailto:matt.allen65@hotmail.com'>
-									matt.allen65@hotmail.com
-								</Link>
-							</Group>
-						</Group>
-					</footer>
-				</Group>
+			<Container size='lg' px={4} py={8}>
+				{/* <Group orientation='vertical'> */}
+				<HeaderBar />
+				<Grid columns={12}>
+					{/* <LeftColumn />
+						<RightColumn /> */}
+				</Grid>
+				<footer>
+					{/* <Group orientation='vertical' align='center' marginTop='8' gap='2'> */}
+					<Text>Created using </Text>
+					<NavLink href='https://mantine.dev/' target='_blank' rel='noopener noreferrer'>
+						Mantine
+					</NavLink>{' '}
+					<Text>and inspired by </Text>
+					<NavLink href='https://dimden.dev/' target='_blank' rel='noopener noreferrer'>
+						<img src='https://dimden.dev/services/images/88x31.gif' alt='Dimden' />
+					</NavLink>
+					{/* <Group gap='2' flexWrap='wrap' justifyContent='center'> */}
+					<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
+					<NavLink href='mailto:matt.allen65@hotmail.com'>
+						matt.allen65@hotmail.com
+					</NavLink>
+					{/* </Group> */}
+					{/* </Group> */}
+				</footer>
+				{/* </Group> */}
 			</Container>
-		</ThemeProvider>
+		</MantineProvider>
 	);
 };
 

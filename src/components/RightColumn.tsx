@@ -1,5 +1,4 @@
-import { Checkbox, Group, Link } from '@parkui/components/ui';
-import { Box, GridItem } from 'styled-system/jsx';
+import { Checkbox, Group, Link, Box, GridItem } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
 import { SiteCard } from './SiteCard';

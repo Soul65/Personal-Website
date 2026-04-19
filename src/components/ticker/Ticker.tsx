@@ -1,6 +1,4 @@
-import { Marquee } from '@ark-ui/react/marquee';
-import { Group, Text } from '@parkui/components/ui';
-import { marquee } from 'styled-system/recipes';
+import { Group, Text, Marquee } from '@mantine/core';
 
 const items = [
 	'HTML5',

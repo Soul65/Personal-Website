@@ -1,4 +1,4 @@
-import { Card } from '@parkui/components/ui';
+import { Card } from '@mantine/core';
 
 export const SiteCard = ({
 	children,
