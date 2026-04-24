@@ -1,4 +1,4 @@
-import { Card } from '@mantine/core';
+import { Card, Title } from '@mantine/core';
 
 export const SiteCard = ({
 	children,
@@ -10,13 +10,13 @@ export const SiteCard = ({
 	disablePadding?: boolean;
 }) => {
 	return (
-		<Card.Root width='100%'>
-			<Card.Header>
-				<Card.Title>{title}</Card.Title>
-			</Card.Header>
-			<Card.Body paddingX={disablePadding ? 0 : 6} paddingY={disablePadding ? 0 : 4}>
+		<Card>
+			<Card.Section>
+				<Title>{title}</Title>
+			</Card.Section>
+			<Card.Section px={disablePadding ? 0 : 6} py={disablePadding ? 0 : 4}>
 				{children}
-			</Card.Body>
-		</Card.Root>
+			</Card.Section>
+		</Card>
 	);
 };

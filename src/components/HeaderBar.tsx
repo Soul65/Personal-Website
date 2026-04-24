@@ -62,10 +62,10 @@ export const HeaderBar = () => {
 
 	return (
 		<header id='top'>
-			<Group mb='4' justify="center">
+			<Group mb='4' justify='center'>
 				<Text
 					ff='Monoton'
-					size='xl'
+					size='4.5rem'
 					ta='center'
 					color='#ffffff'
 					opacity={isFirstNameGlowing ? 1 : 0.3}
@@ -73,14 +73,14 @@ export const HeaderBar = () => {
 						transition: 'opacity 0.1s ease-in-out',
 						textShadow: isFirstNameGlowing
 							? '0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff'
-							: ''
+							: '',
 					}}
 				>
 					Matt
 				</Text>
 				<Text
 					ff='Monoton'
-					size='xl'
+					size='4.5rem'
 					ta='center'
 					color='Red'
 					opacity={isLastNameGlowing ? 1 : 0.3}
@@ -88,7 +88,7 @@ export const HeaderBar = () => {
 						transition: 'opacity 0.1s ease-in-out',
 						textShadow: isLastNameGlowing
 							? '0 0 80px Red,0 0 30px FireBrick,0 0 6px DarkRed'
-							: ''
+							: '',
 					}}
 				>
 					Allen

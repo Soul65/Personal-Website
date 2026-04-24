@@ -1,6 +1,6 @@
-import { Group, Link, Text, Box, Divider, GridItem, Stack } from '@mantine/core';
+import { Group, NavLink, Text, Box, Divider, Grid, Stack } from '@mantine/core';
 import { SiteCard } from './SiteCard';
-import { Ticker } from './ticker/Ticker';
+import { Ticker } from './Ticker';
 
 const linkStyle = {
 	width: '150px',
@@ -11,10 +11,10 @@ const linkStyle = {
 };
 
 export const LeftColumn = () => (
-	<GridItem colSpan={{ base: 12, md: 9 }}>
-		<Group orientation='vertical' width='100%'>
+	<Grid.Col span={{ base: 12, md: 9 }}>
+		<Stack>
 			<SiteCard title='About Me'>
-				<Group grow flexWrap='wrap'>
+				<Group grow fw='wrap'>
 					<img
 						src='assets/IMG_2923_cropped.jpg'
 						id='portrait'
@@ -33,7 +33,7 @@ export const LeftColumn = () => (
 			<SiteCard title='Work History'>
 				<Stack gap='4'>
 					<Box>
-						<Link
+						<NavLink
 							href='https://independently.ai/'
 							target='_blank'
 							rel='noopener noreferrer'
@@ -43,7 +43,7 @@ export const LeftColumn = () => (
 								src='assets/independently_logomark_white.png'
 								alt='Independently'
 							/>
-						</Link>
+						</NavLink>
 						<p>
 							At Independently, I worked as a full-stack developer on a SaaS platform
 							that helps organizations manage independent contractors. My main focus
@@ -57,14 +57,14 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<Link
+						<NavLink
 							href='https://alaunus.com/'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
 							<img src='assets/Alaunus.png' alt='Alaunus' />
-						</Link>
+						</NavLink>
 						<p>
 							At Alaunus, I worked as a front-end developer on a healthcare SaaS
 							platform. My work primarily involved developing and maintaining
@@ -76,14 +76,14 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<Link
+						<NavLink
 							href='https://www.prnewswire.com/news-releases/imax-acquires-streaming-technology-company-ssimwave-inc-301631500.html'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
 							<img src='assets/SSIMWAVE.png' alt='SSIMWave' />
-						</Link>
+						</NavLink>
 						<p>
 							My first job I worked at was a company called SSIMWave. Their products
 							focused on analyzing and optimizing video quality of experience. While
@@ -99,14 +99,14 @@ export const LeftColumn = () => (
 			<SiteCard title='Education'>
 				<Stack gap='4'>
 					<Box>
-						<Link
+						<NavLink
 							href='https://www.conestogac.on.ca'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
 							<img src='assets/conestoga.svg' alt='Conestoga College' />
-						</Link>
+						</NavLink>
 						<p>
 							I am a graduate of the Computer Programmer / Analyst course at Conestoga
 							College. While there I learned a multitude of languages including C#,
@@ -116,7 +116,7 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<Link
+						<NavLink
 							href='https://resurrection.wcdsb.ca'
 							target='_blank'
 							rel='noopener noreferrer'
@@ -127,7 +127,7 @@ export const LeftColumn = () => (
 								alt='Resurrection'
 								style={{ height: '50px' }}
 							/>
-						</Link>
+						</NavLink>
 						<p>
 							At Resurrection Catholic Secondary School, I took computer programming
 							in both grades 11 and 12. This is where I finally started to learn the
@@ -139,14 +139,14 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<Link
+						<NavLink
 							href='https://www.facebook.com/craztechz'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={linkStyle}
 						>
 							<img src='assets/CrazTechz.png' alt='CrazTechz' />
-						</Link>
+						</NavLink>
 						<p>
 							In the summer between grade 5 and 6 I went to a summer camp called
 							CrazTechz. This was my first real experience with programming. While
@@ -156,6 +156,6 @@ export const LeftColumn = () => (
 					</Box>
 				</Stack>
 			</SiteCard>
-		</Group>
-	</GridItem>
+		</Stack>
+	</Grid.Col>
 );

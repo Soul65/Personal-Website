@@ -1,4 +1,4 @@
-import { Checkbox, Group, Link, Box, GridItem } from '@mantine/core';
+import { Checkbox, Stack, NavLink, Box, Grid } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
 import { SiteCard } from './SiteCard';
@@ -15,34 +15,38 @@ export const RightColumn = () => {
 		);
 
 	return (
-		<GridItem colSpan={{ base: 12, md: 3 }}>
-			<Group orientation='vertical' width='100%'>
+		<Grid.Col span={{ base: 12, md: 3 }}>
+			<Stack>
 				<SiteCard title='Links'>
-					<Link href='/src/old_site/index.html' target='_blank' rel='noopener noreferrer'>
+					<NavLink
+						href='/src/old_site/index.html'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
 						Old Site
-					</Link>
-					<Link
+					</NavLink>
+					<NavLink
 						href='https://www.linkedin.com/in/matt-allen-b4548b60/'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
 						LinkedIn
-					</Link>
-					<Link
+					</NavLink>
+					<NavLink
 						href='https://github.com/Soul65'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
 						GitHub
-					</Link>
-					<Link
+					</NavLink>
+					<NavLink
 						href='https://profile.indeed.com/p/matta-zbcjfqp'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
 						Indeed Profile
-					</Link>
-					<Link href='mailto:matt.allen65@hotmail.com'>Email Me</Link>
+					</NavLink>
+					<NavLink href='mailto:matt.allen65@hotmail.com'>Email Me</NavLink>
 				</SiteCard>
 				<SiteCard title='Weather in My City' disablePadding>
 					<div
@@ -68,37 +72,21 @@ export const RightColumn = () => {
 				</SiteCard>
 				<SiteCard title='Animation Control'>
 					<Box id='animation-control'>
-						<Checkbox.Root
+						<Checkbox
 							checked={isSnowfallEnabled}
 							variant='outline'
-							onCheckedChange={(e) =>
-								setIsSnowfallEnabled(
-									e.checked === 'indeterminate' ? false : e.checked,
-								)
-							}
-						>
-							<Checkbox.HiddenInput />
-							<Checkbox.Control borderColor='var(--colors-color-palette-solid-bg)'>
-								<Checkbox.Indicator />
-							</Checkbox.Control>
-							<Checkbox.Label>Enable Background Animation</Checkbox.Label>
-						</Checkbox.Root>
-						<Checkbox.Root
+							onChange={(e) => setIsSnowfallEnabled(e.currentTarget.checked)}
+							label='Enable Snowfall Animation'
+						/>
+						<Checkbox
 							checked={isNameAnimated}
 							variant='outline'
-							onCheckedChange={(e) =>
-								setIsNameAnimated(e.checked === 'indeterminate' ? false : e.checked)
-							}
-						>
-							<Checkbox.HiddenInput />
-							<Checkbox.Control borderColor='var(--colors-color-palette-solid-bg)'>
-								<Checkbox.Indicator />
-							</Checkbox.Control>
-							<Checkbox.Label>Enable Name Animation</Checkbox.Label>
-						</Checkbox.Root>
+							onChange={(e) => setIsNameAnimated(e.currentTarget.checked)}
+							label='Enable Name Animation'
+						/>
 					</Box>
 				</SiteCard>
-			</Group>
-		</GridItem>
+			</Stack>
+		</Grid.Col>
 	);
 };
