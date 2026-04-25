@@ -1,4 +1,4 @@
-import { Checkbox, Stack, NavLink, Box, Grid } from '@mantine/core';
+import { Box, Checkbox, Grid, NavLink, Stack } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
 import { SiteCard } from './SiteCard';
@@ -22,31 +22,27 @@ export const RightColumn = () => {
 						href='/src/old_site/index.html'
 						target='_blank'
 						rel='noopener noreferrer'
-					>
-						Old Site
-					</NavLink>
+						label='Old Site'
+					/>
 					<NavLink
 						href='https://www.linkedin.com/in/matt-allen-b4548b60/'
 						target='_blank'
 						rel='noopener noreferrer'
-					>
-						LinkedIn
-					</NavLink>
+						label='LinkedIn'
+					/>
 					<NavLink
 						href='https://github.com/Soul65'
 						target='_blank'
 						rel='noopener noreferrer'
-					>
-						GitHub
-					</NavLink>
+						label='GitHub'
+					/>
 					<NavLink
 						href='https://profile.indeed.com/p/matta-zbcjfqp'
 						target='_blank'
 						rel='noopener noreferrer'
-					>
-						Indeed Profile
-					</NavLink>
-					<NavLink href='mailto:matt.allen65@hotmail.com'>Email Me</NavLink>
+						label='Indeed Profile'
+					/>
+					<NavLink href='mailto:matt.allen65@hotmail.com' label='Email Me' />
 				</SiteCard>
 				<SiteCard title='Weather in My City' disablePadding>
 					<div

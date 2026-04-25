@@ -1,7 +1,16 @@
 import { HeaderBar } from '@components/HeaderBar';
 import { LeftColumn } from '@components/LeftColumn';
 import { RightColumn } from '@components/RightColumn';
-import { Container, Grid, Group, MantineProvider, NavLink, Stack, Text } from '@mantine/core';
+import {
+	Container,
+	Grid,
+	Group,
+	Image,
+	MantineProvider,
+	NavLink,
+	Stack,
+	Text,
+} from '@mantine/core';
 import '@mantine/core/styles.css';
 import Snowfall from 'react-snowfall';
 import { useAnimationStore } from './store';
@@ -52,7 +61,7 @@ const App = () => {
 	const isSnowfallEnabled = useAnimationStore((state) => state.isSnowfallEnabled);
 
 	return (
-		<MantineProvider forceColorScheme='dark'>
+		<MantineProvider forceColorScheme='dark' theme={{ primaryShade: 2 }}>
 			{isSnowfallEnabled && (
 				<Snowfall
 					snowflakeCount={150}
@@ -89,7 +98,7 @@ const App = () => {
 								target='_blank'
 								rel='noopener noreferrer'
 							>
-								<img
+								<Image
 									src='https://dimden.dev/services/images/88x31.gif'
 									alt='Dimden'
 								/>
