@@ -1,6 +1,7 @@
-import { Box, Checkbox, Grid, NavLink, Stack } from '@mantine/core';
+import { Box, Checkbox, Grid, Stack } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
+import { CustomLink } from './CustomLink';
 import { SiteCard } from './SiteCard';
 
 export const RightColumn = () => {
@@ -18,31 +19,17 @@ export const RightColumn = () => {
 		<Grid.Col span={{ base: 12, md: 3 }}>
 			<Stack>
 				<SiteCard title='Links'>
-					<NavLink
-						href='/src/old_site/index.html'
-						target='_blank'
-						rel='noopener noreferrer'
-						label='Old Site'
-					/>
-					<NavLink
+					<CustomLink href='/src/old_site/index.html' label='Old Site' />
+					<CustomLink
 						href='https://www.linkedin.com/in/matt-allen-b4548b60/'
-						target='_blank'
-						rel='noopener noreferrer'
 						label='LinkedIn'
 					/>
-					<NavLink
-						href='https://github.com/Soul65'
-						target='_blank'
-						rel='noopener noreferrer'
-						label='GitHub'
-					/>
-					<NavLink
+					<CustomLink href='https://github.com/Soul65' label='GitHub' />
+					<CustomLink
 						href='https://profile.indeed.com/p/matta-zbcjfqp'
-						target='_blank'
-						rel='noopener noreferrer'
 						label='Indeed Profile'
 					/>
-					<NavLink href='mailto:matt.allen65@hotmail.com' label='Email Me' />
+					<CustomLink href='mailto:matt.allen65@hotmail.com' label='Email Me' />
 				</SiteCard>
 				<SiteCard title='Weather in My City' disablePadding>
 					<div
@@ -73,6 +60,7 @@ export const RightColumn = () => {
 							variant='outline'
 							onChange={(e) => setIsSnowfallEnabled(e.currentTarget.checked)}
 							label='Enable Snowfall Animation'
+							pb='xs'
 						/>
 						<Checkbox
 							checked={isNameAnimated}

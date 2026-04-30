@@ -1,16 +1,8 @@
+import { Footer } from '@components/Footer';
 import { HeaderBar } from '@components/HeaderBar';
 import { LeftColumn } from '@components/LeftColumn';
 import { RightColumn } from '@components/RightColumn';
-import {
-	Container,
-	Grid,
-	Group,
-	Image,
-	MantineProvider,
-	NavLink,
-	Stack,
-	Text,
-} from '@mantine/core';
+import { Container, Grid, MantineProvider, Stack } from '@mantine/core';
 import '@mantine/core/styles.css';
 import Snowfall from 'react-snowfall';
 import { useAnimationStore } from './store';
@@ -82,35 +74,7 @@ const App = () => {
 						<LeftColumn />
 						<RightColumn />
 					</Grid>
-					<footer>
-						<Stack align='center' mt='8' gap='2'>
-							<Text>Created using </Text>
-							<NavLink
-								href='https://mantine.dev/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Mantine
-							</NavLink>{' '}
-							<Text>and inspired by </Text>
-							<NavLink
-								href='https://dimden.dev/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								<Image
-									src='https://dimden.dev/services/images/88x31.gif'
-									alt='Dimden'
-								/>
-							</NavLink>
-							<Group gap='2' fw='wrap' justify='center'>
-								<Text>&copy;{new Date().getFullYear()} Matt Allen</Text>
-								<NavLink href='mailto:matt.allen65@hotmail.com'>
-									matt.allen65@hotmail.com
-								</NavLink>
-							</Group>
-						</Stack>
-					</footer>
+					<Footer />
 				</Stack>
 			</Container>
 		</MantineProvider>

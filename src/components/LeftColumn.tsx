@@ -1,14 +1,7 @@
-import { Box, Divider, Grid, Group, Image, Stack, Text, UnstyledButton } from '@mantine/core';
+import { Box, Divider, Grid, Group, Image, Stack, Text } from '@mantine/core';
+import { ImageLink } from './ImageLink';
 import { SiteCard } from './SiteCard';
 import { Ticker } from './Ticker';
-
-const linkStyle = {
-	width: '150px',
-	height: '70px',
-	display: 'flex',
-	justifyContent: 'left',
-	alignItems: 'center',
-};
 
 export const LeftColumn = () => (
 	<Grid.Col span={{ base: 12, md: 9 }}>
@@ -33,18 +26,11 @@ export const LeftColumn = () => (
 			<SiteCard title='Work History'>
 				<Stack gap='4'>
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://independently.ai/'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image
-								src='assets/independently_logomark_white.png'
-								alt='Independently'
-							/>
-						</UnstyledButton>
+							src='assets/independently_logomark_white.png'
+							alt='Independently'
+						/>
 						<p>
 							At Independently, I worked as a full-stack developer on a SaaS platform
 							that helps organizations manage independent contractors. My main focus
@@ -58,15 +44,11 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://alaunus.com/'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image src='assets/Alaunus.png' alt='Alaunus' />
-						</UnstyledButton>
+							src='assets/Alaunus.png'
+							alt='Alaunus'
+						/>
 						<p>
 							At Alaunus, I worked as a front-end developer on a healthcare SaaS
 							platform. My work primarily involved developing and maintaining
@@ -78,15 +60,11 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://www.prnewswire.com/news-releases/imax-acquires-streaming-technology-company-ssimwave-inc-301631500.html'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image src='assets/SSIMWAVE.png' alt='SSIMWave' />
-						</UnstyledButton>
+							src='assets/SSIMWAVE.png'
+							alt='SSIMWave'
+						/>
 						<p>
 							My first job I worked at was a company called SSIMWave. Their products
 							focused on analyzing and optimizing video quality of experience. While
@@ -102,15 +80,11 @@ export const LeftColumn = () => (
 			<SiteCard title='Education'>
 				<Stack gap='4'>
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://www.conestogac.on.ca'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image src='assets/conestoga.svg' alt='Conestoga College' />
-						</UnstyledButton>
+							src='assets/conestoga.svg'
+							alt='Conestoga College'
+						/>
 						<p>
 							I am a graduate of the Computer Programmer / Analyst course at Conestoga
 							College. While there I learned a multitude of languages including C#,
@@ -120,19 +94,13 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://resurrection.wcdsb.ca'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image
-								src='assets/Resurrection.png'
-								alt='Resurrection'
-								style={{ height: '50px' }}
-							/>
-						</UnstyledButton>
+							src='assets/Resurrection.png'
+							alt='Resurrection'
+							height='50px'
+							width='50px'
+						/>
 						<p>
 							At Resurrection Catholic Secondary School, I took computer programming
 							in both grades 11 and 12. This is where I finally started to learn the
@@ -144,15 +112,11 @@ export const LeftColumn = () => (
 					</Box>
 					<Divider />
 					<Box>
-						<UnstyledButton
-							component='a'
+						<ImageLink
 							href='https://www.facebook.com/craztechz'
-							target='_blank'
-							rel='noopener noreferrer'
-							style={linkStyle}
-						>
-							<Image src='assets/CrazTechz.png' alt='CrazTechz' />
-						</UnstyledButton>
+							src='assets/CrazTechz.png'
+							alt='CrazTechz'
+						/>
 						<p>
 							In the summer between grade 5 and 6 I went to a summer camp called
 							CrazTechz. This was my first real experience with programming. While

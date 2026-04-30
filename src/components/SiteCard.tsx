@@ -10,7 +10,9 @@ export const SiteCard = ({
 	disablePadding?: boolean;
 }) => (
 	<Card withBorder>
-		<Title>{title}</Title>
+		<Title order={3} pb={10}>
+			{title}
+		</Title>
 		{disablePadding ? (
 			<Card.Section px={disablePadding ? 0 : 6} py={disablePadding ? 0 : 4}>
 				{children}
