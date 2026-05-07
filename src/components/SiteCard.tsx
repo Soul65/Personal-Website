@@ -9,7 +9,12 @@ export const SiteCard = ({
 	title: string;
 	disablePadding?: boolean;
 }) => (
-	<Card withBorder>
+	<Card
+		withBorder
+		bg='dark.9'
+		c='cyan.8'
+		styles={{ root: { borderColor: 'var(--mantine-color-cyan-8)' } }}
+	>
 		<Title order={3} pb={10}>
 			{title}
 		</Title>

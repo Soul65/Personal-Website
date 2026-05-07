@@ -27,7 +27,7 @@ export const Ticker = ({ label }: { label: string }) => (
 		<Text size='lg' fw='bold'>
 			{label}:
 		</Text>
-		<Marquee pauseOnHover duration={30000}>
+		<Marquee pauseOnHover duration={30000} fadeEdgeColor='var(--mantine-color-dark-9)'>
 			{items.map((item, i) => (
 				<Box key={i}>{item}</Box>
 			))}

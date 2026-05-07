@@ -2,7 +2,7 @@ import { Footer } from '@components/Footer';
 import { HeaderBar } from '@components/HeaderBar';
 import { LeftColumn } from '@components/LeftColumn';
 import { RightColumn } from '@components/RightColumn';
-import { Container, Grid, MantineProvider, Stack } from '@mantine/core';
+import { Box, Container, Grid, MantineProvider, Stack } from '@mantine/core';
 import '@mantine/core/styles.css';
 import Snowfall from 'react-snowfall';
 import { useAnimationStore } from './store';
@@ -53,30 +53,32 @@ const App = () => {
 	const isSnowfallEnabled = useAnimationStore((state) => state.isSnowfallEnabled);
 
 	return (
-		<MantineProvider forceColorScheme='dark' theme={{ primaryShade: 2 }}>
-			{isSnowfallEnabled && (
-				<Snowfall
-					snowflakeCount={150}
-					images={images}
-					radius={radius}
-					speed={speed}
-					wind={wind}
-					color={color}
-					style={{
-						position: 'fixed',
-					}}
-				/>
-			)}
-			<Container size='lg' px={4} py={8}>
-				<Stack>
-					<HeaderBar />
-					<Grid columns={12}>
-						<LeftColumn />
-						<RightColumn />
-					</Grid>
-					<Footer />
-				</Stack>
-			</Container>
+		<MantineProvider defaultColorScheme='dark'>
+			<Box bg='dark.9'>
+				{isSnowfallEnabled && (
+					<Snowfall
+						snowflakeCount={150}
+						images={images}
+						radius={radius}
+						speed={speed}
+						wind={wind}
+						color={color}
+						style={{
+							position: 'fixed',
+						}}
+					/>
+				)}
+				<Container size='lg' px={4} py={8}>
+					<Stack>
+						<HeaderBar />
+						<Grid columns={12}>
+							<LeftColumn />
+							<RightColumn />
+						</Grid>
+						<Footer />
+					</Stack>
+				</Container>
+			</Box>
 		</MantineProvider>
 	);
 };
