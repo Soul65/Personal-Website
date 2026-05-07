@@ -8,7 +8,7 @@ export const Footer = () => (
 			<Group gap='2' fw='wrap' justify='center'>
 				<Text>Created using </Text>
 				<CustomLink href='https://mantine.dev/' label='Mantine' />{' '}
-				<Text>and inspired by </Text>
+				<Text pr={3}>and inspired by</Text>
 				<ImageLink
 					href='https://dimden.dev/'
 					src='https://dimden.dev/services/images/88x31.gif'

@@ -1,19 +1,27 @@
-import { Box, Checkbox, Grid, Stack } from '@mantine/core';
+import { Box, Checkbox, Grid, Radio, Stack } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
 import { CustomLink } from './CustomLink';
 import { SiteCard } from './SiteCard';
 
 export const RightColumn = () => {
-	const [isSnowfallEnabled, setIsSnowfallEnabled, isNameAnimated, setIsNameAnimated] =
-		useAnimationStore(
-			useShallow((state) => [
-				state.isSnowfallEnabled,
-				state.setIsSnowfallEnabled,
-				state.isNameAnimated,
-				state.setIsNameAnimated,
-			]),
-		);
+	const [
+		isSnowfallEnabled,
+		setIsSnowfallEnabled,
+		isNameAnimated,
+		setIsNameAnimated,
+		snowfallType,
+		setSnowfallType,
+	] = useAnimationStore(
+		useShallow((state) => [
+			state.isSnowfallEnabled,
+			state.setIsSnowfallEnabled,
+			state.isNameAnimated,
+			state.setIsNameAnimated,
+			state.snowfallType,
+			state.setSnowfallType,
+		]),
+	);
 
 	return (
 		<Grid.Col span={{ base: 12, md: 3 }}>
@@ -68,6 +76,17 @@ export const RightColumn = () => {
 							onChange={(e) => setIsNameAnimated(e.currentTarget.checked)}
 							label='Enable Name Animation'
 						/>
+						<Radio.Group
+							label='Type'
+							value={snowfallType}
+							onChange={(value) => setSnowfallType(value)}
+							disabled={!isSnowfallEnabled}
+						>
+							<Radio value='snow' label='Snow' pb={5} />
+							<Radio value='rain' label='Rain' pb={5} />
+							<Radio value='stars' label='Stars' pb={5} />
+							<Radio value='leaves' label='Leaves' />
+						</Radio.Group>
 					</Box>
 				</SiteCard>
 			</Stack>
