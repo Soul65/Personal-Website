@@ -40,12 +40,13 @@ export const RightColumn = () => {
 					<CustomLink href='mailto:matt.allen65@hotmail.com' label='Email Me' />
 				</SiteCard>
 				<SiteCard title='Weather in My City' disablePadding>
-					<div
+					<Box
 						id='ww_d0fe68cf9360d'
 						// @ts-expect-error - weather widget attributes
 						v='1.3'
 						loc='id'
 						a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4775"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_whr":3}'
+						maw='100%'
 					>
 						More forecasts:{' '}
 						<a
@@ -55,7 +56,7 @@ export const RightColumn = () => {
 						>
 							Calgary weather 30 days
 						</a>
-					</div>
+					</Box>
 					<script
 						async
 						src='https://app3.weatherwidget.org/js/?id=ww_d0fe68cf9360d'
@@ -75,17 +76,17 @@ export const RightColumn = () => {
 							variant='outline'
 							onChange={(e) => setIsNameAnimated(e.currentTarget.checked)}
 							label='Enable Name Animation'
+							pb='xs'
 						/>
 						<Radio.Group
-							label='Type'
 							value={snowfallType}
 							onChange={(value) => setSnowfallType(value)}
 							disabled={!isSnowfallEnabled}
 						>
-							<Radio value='snow' label='Snow' pb={5} />
-							<Radio value='rain' label='Rain' pb={5} />
-							<Radio value='stars' label='Stars' pb={5} />
-							<Radio value='leaves' label='Leaves' />
+							<Radio value='snow' label='Snow (December - February)' pb={5} />
+							<Radio value='rain' label='Rain (March - May)' pb={5} />
+							<Radio value='stars' label='Stars (June - August)' pb={5} />
+							<Radio value='leaves' label='Leaves (September - November)' />
 						</Radio.Group>
 					</Box>
 				</SiteCard>
