@@ -1,4 +1,4 @@
-import { Card } from '@parkui/components/ui';
+import { Box, Card, Title } from '@mantine/core';
 
 export const SiteCard = ({
 	children,
@@ -8,15 +8,24 @@ export const SiteCard = ({
 	children: React.ReactNode;
 	title: string;
 	disablePadding?: boolean;
-}) => {
-	return (
-		<Card.Root width='100%'>
-			<Card.Header>
-				<Card.Title>{title}</Card.Title>
-			</Card.Header>
-			<Card.Body paddingX={disablePadding ? 0 : 6} paddingY={disablePadding ? 0 : 4}>
+}) => (
+	<Card
+		withBorder
+		bg='dark.9'
+		c='cyan.8'
+		styles={{ root: { borderColor: 'var(--mantine-color-cyan-8)' } }}
+	>
+		<Title order={3} pb={10}>
+			{title}
+		</Title>
+		{disablePadding ? (
+			<Card.Section px={disablePadding ? 0 : 6} py={disablePadding ? 0 : 4}>
 				{children}
-			</Card.Body>
-		</Card.Root>
-	);
-};
+			</Card.Section>
+		) : (
+			<Box px={disablePadding ? 0 : 6} py={disablePadding ? 0 : 4}>
+				{children}
+			</Box>
+		)}
+	</Card>
+);

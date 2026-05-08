@@ -1,57 +1,52 @@
-import { Checkbox, Group, Link } from '@parkui/components/ui';
-import { Box, GridItem } from 'styled-system/jsx';
+import { Box, Checkbox, Grid, Radio, Stack } from '@mantine/core';
 import { useShallow } from 'zustand/shallow';
 import { useAnimationStore } from '../store';
+import { CustomLink } from './CustomLink';
 import { SiteCard } from './SiteCard';
 
 export const RightColumn = () => {
-	const [isSnowfallEnabled, setIsSnowfallEnabled, isNameAnimated, setIsNameAnimated] =
-		useAnimationStore(
-			useShallow((state) => [
-				state.isSnowfallEnabled,
-				state.setIsSnowfallEnabled,
-				state.isNameAnimated,
-				state.setIsNameAnimated,
-			]),
-		);
+	const [
+		isSnowfallEnabled,
+		setIsSnowfallEnabled,
+		isNameAnimated,
+		setIsNameAnimated,
+		snowfallType,
+		setSnowfallType,
+	] = useAnimationStore(
+		useShallow((state) => [
+			state.isSnowfallEnabled,
+			state.setIsSnowfallEnabled,
+			state.isNameAnimated,
+			state.setIsNameAnimated,
+			state.snowfallType,
+			state.setSnowfallType,
+		]),
+	);
 
 	return (
-		<GridItem colSpan={{ base: 12, md: 3 }}>
-			<Group orientation='vertical' width='100%'>
+		<Grid.Col span={{ base: 12, md: 3 }}>
+			<Stack>
 				<SiteCard title='Links'>
-					<Link href='/src/old_site/index.html' target='_blank' rel='noopener noreferrer'>
-						Old Site
-					</Link>
-					<Link
+					<CustomLink href='/src/old_site/index.html' label='Old Site' />
+					<CustomLink
 						href='https://www.linkedin.com/in/matt-allen-b4548b60/'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						LinkedIn
-					</Link>
-					<Link
-						href='https://github.com/Soul65'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						GitHub
-					</Link>
-					<Link
+						label='LinkedIn'
+					/>
+					<CustomLink href='https://github.com/Soul65' label='GitHub' />
+					<CustomLink
 						href='https://profile.indeed.com/p/matta-zbcjfqp'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						Indeed Profile
-					</Link>
-					<Link href='mailto:matt.allen65@hotmail.com'>Email Me</Link>
+						label='Indeed Profile'
+					/>
+					<CustomLink href='mailto:matt.allen65@hotmail.com' label='Email Me' />
 				</SiteCard>
 				<SiteCard title='Weather in My City' disablePadding>
-					<div
+					<Box
 						id='ww_d0fe68cf9360d'
 						// @ts-expect-error - weather widget attributes
 						v='1.3'
 						loc='id'
 						a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4775"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_whr":3}'
+						maw='100%'
 					>
 						More forecasts:{' '}
 						<a
@@ -61,7 +56,7 @@ export const RightColumn = () => {
 						>
 							Calgary weather 30 days
 						</a>
-					</div>
+					</Box>
 					<script
 						async
 						src='https://app3.weatherwidget.org/js/?id=ww_d0fe68cf9360d'
@@ -69,37 +64,33 @@ export const RightColumn = () => {
 				</SiteCard>
 				<SiteCard title='Animation Control'>
 					<Box id='animation-control'>
-						<Checkbox.Root
+						<Checkbox
 							checked={isSnowfallEnabled}
 							variant='outline'
-							onCheckedChange={(e) =>
-								setIsSnowfallEnabled(
-									e.checked === 'indeterminate' ? false : e.checked,
-								)
-							}
-						>
-							<Checkbox.HiddenInput />
-							<Checkbox.Control borderColor='var(--colors-color-palette-solid-bg)'>
-								<Checkbox.Indicator />
-							</Checkbox.Control>
-							<Checkbox.Label>Enable Background Animation</Checkbox.Label>
-						</Checkbox.Root>
-						<Checkbox.Root
+							onChange={(e) => setIsSnowfallEnabled(e.currentTarget.checked)}
+							label='Enable Snowfall Animation'
+							pb='xs'
+						/>
+						<Checkbox
 							checked={isNameAnimated}
 							variant='outline'
-							onCheckedChange={(e) =>
-								setIsNameAnimated(e.checked === 'indeterminate' ? false : e.checked)
-							}
+							onChange={(e) => setIsNameAnimated(e.currentTarget.checked)}
+							label='Enable Name Animation'
+							pb='xs'
+						/>
+						<Radio.Group
+							value={snowfallType}
+							onChange={(value) => setSnowfallType(value)}
+							disabled={!isSnowfallEnabled}
 						>
-							<Checkbox.HiddenInput />
-							<Checkbox.Control borderColor='var(--colors-color-palette-solid-bg)'>
-								<Checkbox.Indicator />
-							</Checkbox.Control>
-							<Checkbox.Label>Enable Name Animation</Checkbox.Label>
-						</Checkbox.Root>
+							<Radio value='snow' label='Snow (December - February)' pb={5} />
+							<Radio value='rain' label='Rain (March - May)' pb={5} />
+							<Radio value='stars' label='Stars (June - August)' pb={5} />
+							<Radio value='leaves' label='Leaves (September - November)' />
+						</Radio.Group>
 					</Box>
 				</SiteCard>
-			</Group>
-		</GridItem>
+			</Stack>
+		</Grid.Col>
 	);
 };
