@@ -22,9 +22,7 @@
 		"lint:types": "npx tsc",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
-		"ncu": "ncu",
-		"ncu:update": "ncu -u && pnpm install",
-		"ncu:update:minor": "ncu -u -t minor && pnpm install"
+		"update:global": "pnpm up -g --latest"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.3",
@@ -36,7 +34,7 @@
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.5.2",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.4.0",
+		"lint-staged": "^17.0.3",
 		"postcss": "^8.5.14",
 		"postcss-preset-mantine": "^1.18.0",
 		"postcss-simple-vars": "^7.0.1",
@@ -59,5 +57,5 @@
 		"*.{js,ts,tsx}": "pnpm run lint",
 		"*.{ts,tsx}": "bash -c 'pnpm run lint:types'"
 	},
-	"packageManager": "pnpm@10.33.4"
+	"packageManager": "pnpm@11.0.9"
 }
