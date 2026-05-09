@@ -10,55 +10,54 @@ export const HeaderBar = () => {
 	const isNameAnimated = useAnimationStore((state) => state.isNameAnimated);
 
 	useEffect(() => {
-		if (!isNameAnimated) {
-			setIsFirstNameGlowing(true);
-			setIsLastNameGlowing(true);
-			return;
-		} else {
-			let timeoutId: number;
-			let currentPhase = 0;
-			let stepInPhase = 0;
+		if (!isNameAnimated) return;
 
-			const phases = [
-				{ duration: 1000, steps: 4 }, // Alternating names
-				{ duration: 300, steps: 6 }, // Flashing both
-				{ duration: 8000, steps: 1 }, // Both glowing
-			];
+		let timeoutId: number;
+		let currentPhase = 0;
+		let stepInPhase = 0;
 
-			const runAnimation = () => {
-				const phase = phases[currentPhase] ?? { duration: 1000, steps: 1 };
+		const phases = [
+			{ duration: 1000, steps: 4 }, // Alternating names
+			{ duration: 300, steps: 6 }, // Flashing both
+			{ duration: 8000, steps: 1 }, // Both glowing
+		];
 
-				if (currentPhase === 0) {
-					// Alternating names
-					setIsFirstNameGlowing(stepInPhase % 2 === 0);
-					setIsLastNameGlowing(stepInPhase % 2 === 1);
-				} else if (currentPhase === 1) {
-					// Flashing both
-					const bothOn = stepInPhase % 2 === 0;
+		const runAnimation = () => {
+			const phase = phases[currentPhase] ?? { duration: 1000, steps: 1 };
 
-					setIsFirstNameGlowing(bothOn);
-					setIsLastNameGlowing(bothOn);
-				} else {
-					// Both glowing
-					setIsFirstNameGlowing(true);
-					setIsLastNameGlowing(true);
-				}
+			if (currentPhase === 0) {
+				// Alternating names
+				setIsFirstNameGlowing(stepInPhase % 2 === 0);
+				setIsLastNameGlowing(stepInPhase % 2 === 1);
+			} else if (currentPhase === 1) {
+				// Flashing both
+				const bothOn = stepInPhase % 2 === 0;
 
-				stepInPhase++;
+				setIsFirstNameGlowing(bothOn);
+				setIsLastNameGlowing(bothOn);
+			} else {
+				// Both glowing
+				setIsFirstNameGlowing(true);
+				setIsLastNameGlowing(true);
+			}
 
-				if (stepInPhase >= phase.steps) {
-					stepInPhase = 0;
-					currentPhase = (currentPhase + 1) % phases.length;
-				}
+			stepInPhase++;
 
-				timeoutId = setTimeout(runAnimation, phase.duration);
-			};
+			if (stepInPhase >= phase.steps) {
+				stepInPhase = 0;
+				currentPhase = (currentPhase + 1) % phases.length;
+			}
 
-			runAnimation();
+			timeoutId = setTimeout(runAnimation, phase.duration);
+		};
 
-			return () => clearTimeout(timeoutId);
-		}
+		runAnimation();
+
+		return () => clearTimeout(timeoutId);
 	}, [isNameAnimated]);
+
+	const isFirstNameAnimated = !isNameAnimated || isFirstNameGlowing;
+	const isLastNameAnimated = !isNameAnimated || isLastNameGlowing;
 
 	return (
 		<header id='top'>
@@ -68,10 +67,10 @@ export const HeaderBar = () => {
 					size='4.5rem'
 					ta='center'
 					color='#ffffff'
-					opacity={isFirstNameGlowing ? 1 : 0.3}
+					opacity={isFirstNameAnimated ? 1 : 0.3}
 					style={{
 						transition: 'opacity 0.1s ease-in-out',
-						textShadow: isFirstNameGlowing
+						textShadow: isFirstNameAnimated
 							? '0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff'
 							: '',
 					}}
@@ -83,10 +82,10 @@ export const HeaderBar = () => {
 					size='4.5rem'
 					ta='center'
 					color='Red'
-					opacity={isLastNameGlowing ? 1 : 0.3}
+					opacity={isLastNameAnimated ? 1 : 0.3}
 					style={{
 						transition: 'opacity 0.1s ease-in-out',
-						textShadow: isLastNameGlowing
+						textShadow: isLastNameAnimated
 							? '0 0 80px Red,0 0 30px FireBrick,0 0 6px DarkRed'
 							: '',
 					}}
