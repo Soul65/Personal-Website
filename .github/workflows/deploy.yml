@@ -40,7 +40,7 @@ jobs:
                 role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
 
           - name: Get S3 Bucket Name from Secrets Manager
-            uses: aws-actions/aws-secretsmanager-get-secrets@v2
+            uses: aws-actions/aws-secretsmanager-get-secrets@v3
             with:
                 secret-ids: |
                     , Portfolio_Deploy_Secrets
