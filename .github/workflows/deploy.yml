@@ -34,7 +34,7 @@ jobs:
                 pnpm run lint:types
 
           - name: Configure AWS Credentials
-            uses: aws-actions/configure-aws-credentials@v6.0.0
+            uses: aws-actions/configure-aws-credentials@v6.1.0
             with:
                 aws-region: us-east-1
                 role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
