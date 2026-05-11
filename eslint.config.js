@@ -5,7 +5,7 @@ import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-	{ ignores: ['dist', 'styled-system', 'src/parkui', '.history'] },
+	{ ignores: ['dist', '.history'] },
 	{
 		files: ['**/*.cjs'],
 		languageOptions: {
@@ -37,6 +37,7 @@ export default defineConfig([
 			...reactHooks.configs.recommended.rules,
 			'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 			'no-unused-vars': 'warn',
+			'react-hooks/exhaustive-deps': 'off',
 		},
 	},
 	eslint.configs.recommended,

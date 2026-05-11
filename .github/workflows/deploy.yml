@@ -11,24 +11,36 @@ jobs:
         permissions:
             id-token: write
             contents: read
+        strategy:
+            matrix:
+                node-version: [24]
         steps:
           - name: Checkout Code
             uses: actions/checkout@v6
 
+          - name: Install pnpm
+            uses: pnpm/action-setup@v6
+
+          - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v6
+            with:
+                node-version: ${{ matrix.node-version }}
+                cache: "pnpm"
+
           - name: Run linters
             run: |
-              npm install
-              npm run lint
-              npm run lint:types
+                pnpm install --frozen-lockfile
+                pnpm run lint
+                pnpm run lint:types
 
           - name: Configure AWS Credentials
-            uses: aws-actions/configure-aws-credentials@v6.0.0
+            uses: aws-actions/configure-aws-credentials@v6.1.0
             with:
                 aws-region: us-east-1
                 role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
 
           - name: Get S3 Bucket Name from Secrets Manager
-            uses: aws-actions/aws-secretsmanager-get-secrets@v2
+            uses: aws-actions/aws-secretsmanager-get-secrets@v3
             with:
                 secret-ids: |
                     , Portfolio_Deploy_Secrets
@@ -36,7 +48,7 @@ jobs:
 
           - name: Build Project
             run: |
-                npm run build
+                pnpm run build
 
           - name: Sync to S3
             run: aws s3 sync ./dist s3://${{ env.AWS_S3_BUCKET }} --delete

@@ -1,0 +1,4 @@
+packages:
+    - 'src/*'
+allowBuilds:
+    esbuild: false

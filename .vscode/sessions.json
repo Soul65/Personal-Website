@@ -11,7 +11,7 @@
                 "color": "terminal.ansiGreen",
 				"autoExecuteCommands": true,
                 "commands": [
-                    "npm run start"
+                    "pnpm run start"
                 ]
             }
         ]

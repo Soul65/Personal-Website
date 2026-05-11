@@ -17,49 +17,46 @@
 	"type": "module",
 	"scripts": {
 		"start": "vite --host",
-		"prepare": "panda codegen",
 		"build": "vite build",
 		"lint": "eslint .",
 		"lint:types": "npx tsc",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
-		"ncu": "ncu",
-		"ncu:update": "ncu -u && npm install",
-		"ncu:update:minor": "ncu -u -t minor && npm install",
-		"parkui:init": "npx @park-ui/cli init",
-		"parkui:add": "npx @park-ui/cli add"
+		"update:deps": "pnpm up --latest",
+		"update:deps:global": "pnpm up -g --latest"
 	},
 	"devDependencies": {
-		"@eslint/js": "^10.0.1",
-		"@pandacss/dev": "^1.8.2",
-		"@park-ui/cli": "=1.0.1",
+		"@eslint/js": "^9.39.3",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^5.1.4",
-		"autoprefixer": "^10.4.27",
-		"eslint": "^10.0.2",
-		"eslint-plugin-react-hooks": "^7.0.1",
+		"@vitejs/plugin-react": "^6.0.1",
+		"autoprefixer": "^10.5.0",
+		"eslint": "^9.39.4",
+		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.5.2",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.3.2",
-		"prettier": "^3.8.1",
-		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.56.1",
-		"vite": "^7.3.1",
+		"lint-staged": "^17.0.3",
+		"postcss": "^8.5.14",
+		"postcss-preset-mantine": "^1.18.0",
+		"postcss-simple-vars": "^7.0.1",
+		"prettier": "^3.8.3",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.59.2",
+		"vite": "^8.0.11",
 		"vite-tsconfig-paths": "^6.1.1"
 	},
 	"dependencies": {
-		"@ark-ui/react": "^5.34.1",
-		"lucide-react": "^0.577.0",
-		"next-themes": "^0.4.6",
-		"react": "^19.2.4",
-		"react-dom": "^19.2.4",
+		"@mantine/core": "^9.1.1",
+		"@mantine/hooks": "^9.1.1",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6",
 		"react-snowfall": "^2.4.0",
-		"zustand": "^5.0.11"
+		"zustand": "^5.0.13"
 	},
 	"lint-staged": {
-		"*.{js,css,html}": "npm run format",
-		"*.{js,ts,tsx}": "npm run lint",
-		"*.{ts,tsx}": "npm run lint:types"
-	}
+		"*.{js,css,html}": "pnpm run format",
+		"*.{js,ts,tsx}": "pnpm run lint",
+		"*.{ts,tsx}": "bash -c 'pnpm run lint:types'"
+	},
+	"packageManager": "pnpm@11.0.9"
 }
