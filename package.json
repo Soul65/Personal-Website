@@ -27,26 +27,26 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
-		"@types/react": "^19.2.14",
+		"@types/react": "^19.2.15",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.2",
 		"autoprefixer": "^10.5.0",
-		"eslint": "^10.3.0",
+		"eslint": "^10.4.0",
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"eslint-plugin-react-refresh": "^0.5.2",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.0.5",
-		"postcss": "^8.5.14",
+		"postcss": "^8.5.15",
 		"postcss-preset-mantine": "^1.18.0",
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^3.8.3",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.59.3",
-		"vite": "^8.0.13",
+		"typescript-eslint": "^8.59.4",
+		"vite": "^8.0.14",
 		"vite-tsconfig-paths": "^6.1.1"
 	},
 	"dependencies": {
-		"@mantine/core": "^9.1.1",
+		"@mantine/core": "^9.2.1",
 		"@mantine/hooks": "^9.2.1",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6",
@@ -58,5 +58,5 @@
 		"*.{js,ts,tsx}": "pnpm run lint",
 		"*.{ts,tsx}": "bash -c 'pnpm run lint:types'"
 	},
-	"packageManager": "pnpm@11.0.9"
+	"packageManager": "pnpm@11.2.2"
 }
