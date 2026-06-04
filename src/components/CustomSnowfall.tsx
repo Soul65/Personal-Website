@@ -39,7 +39,7 @@ export const CustomSnowfall = () => {
 
 			images = [star];
 			radius = [10, 15];
-			speed = [0, 0];
+			speed = [0, 0.1];
 			wind = [-0.5, 0.5];
 			color = '#FFFFFF';
 			// If September to November, show leaves
