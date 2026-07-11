@@ -22,6 +22,8 @@
 		"lint:types": "npx tsc",
 		"preview": "vite preview",
 		"format": "npx prettier . --write",
+		"check:deps": "pnpm outdated -r",
+		"check:deps:global": "pnpm outdated -g",
 		"update:deps": "pnpm up --latest",
 		"update:deps:global": "pnpm up -g --latest && echo 'Run the command manually.'"
 	},

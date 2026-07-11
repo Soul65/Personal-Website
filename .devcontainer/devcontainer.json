@@ -14,7 +14,8 @@
 				"EditorConfig.EditorConfig",
 				"yoavbls.pretty-ts-errors",
 				"xyz.local-history",
-				"nguyenngoclong.terminal-keeper"
+				"nguyenngoclong.terminal-keeper",
+				"anthropic.claude-code"
 			]
 		}
 	}
