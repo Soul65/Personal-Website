@@ -2,3 +2,7 @@ packages:
     - 'src/*'
 allowBuilds:
     esbuild: false
+updateConfig:
+  ignoreDependencies:
+    - typescript
+
