@@ -22,7 +22,7 @@ jobs:
             uses: pnpm/action-setup@v6
 
           - name: Use Node.js ${{ matrix.node-version }}
-            uses: actions/setup-node@v6
+            uses: actions/setup-node@v7
             with:
                 node-version: ${{ matrix.node-version }}
                 cache: "pnpm"
@@ -34,7 +34,7 @@ jobs:
                 pnpm run lint:types
 
           - name: Configure AWS Credentials
-            uses: aws-actions/configure-aws-credentials@6.2.2
+            uses: aws-actions/configure-aws-credentials@v6.2.3
             with:
                 aws-region: us-east-1
                 role-to-assume: arn:aws:iam::464547670885:role/GitHub-Portfolio-Deploy
