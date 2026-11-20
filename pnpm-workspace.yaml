@@ -3,6 +3,5 @@ packages:
 allowBuilds:
     esbuild: false
 updateConfig:
-  ignoreDependencies:
-    - typescript
-
+    ignoreDependencies:
+        - typescript
